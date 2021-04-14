@@ -1,5 +1,8 @@
 {
   "modulo":{
     "title": "Crear un Modulo"
+  },
+  "moduloGeneral": {
+    "title": "Crear un Modulo en General"
   }
 }
