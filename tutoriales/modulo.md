@@ -1,11 +1,16 @@
 Bienvenido, en este tutorial crearemos un modulo dentro de nuestra pagina principal de Prada Mx.<br>
-Asi es como luce nuestra pagina actual: <br>
+<br>
+Se solicita crear un apartado para la parte de administracion de los Uniformes en la pagina principal de Prada MX, asi es como luce nuestra pagina actual: <br>
+
 ![Vista General de nuestra pagina de PradaMx](/imagenes/paginaPrada.png)
 
+Para este apartado se necesita crear un boton en el Menu anterior para poder dirigirnos al modulo de Uniformes, al cual le llamaremos **Uniformes**. Para esto debemos de seguir una serie de pasos que estaran descritas a continuacion.<br>
+
 ### Pasos a seguir
+
 ##### Paso 1: Definir el nombre de nuestro modulo
-Para nuestro primer paso en la creacion de nuestro modulo necesitamos definir el nombre del mismo a crear en este caso se nos pide llamarlo **Uniformes**.<br>
-Se necesita navegar en el proyecto **comercialPruebas** hasta encontrar el archivo llamado **Menu.html** el cual tiene una estructura como la siguiente.<br>
+Para nuestro primer paso en la creacion de nuestro nuevo modulo necesitamos definir el nombre del mismo a crear en este caso se nos ha pedido llamarlo **Uniformes**.<br>
+Para este primer paso necesitamos navegar en el proyecto **comercialPruebas** hasta encontrar el archivo llamado **Menu.html** el cual tiene una estructura comun de un HTML como la siguiente.<br>
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +21,9 @@ Se necesita navegar en el proyecto **comercialPruebas** hasta encontrar el archi
     <title>PRADA Comercial</title>
   </head>
   <body>
+
     <nav class="navbar navbar-expand-lg navbar-light" id="menu-principal"></nav>
+
     <main class="container"></main>
     <footer></footer>
   </body>
@@ -31,6 +38,7 @@ Dentro de nuestra etiqueta **nav** encontraremos una estructura como la siguient
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
       <ul class="navbar-nav  mb-2 mb-lg-0">
         <button type="button" class="btn btn-primary" data-modulo="Ponderados">Ponderado</button>
@@ -50,11 +58,12 @@ Dentro de nuestra etiqueta **nav** encontraremos una estructura como la siguient
         </li>
       </ul>
     </div>
+
   </div>
 </nav>
 ```
 En esta parte de nuestro codigo vamos a crear un nuevo boton que nos va a referenciar a nuestro nuevo modulo, para esto necesitamos editar nuestro codigo de la siguiente manera.<br>
-Si vemos nuestro codigo tenemos nuestro **nav class="navbar ..." id="menu-Principal"**, **div class="container-fluid">** buscamos **div class="collapse ..." id="navbarSupportedContent">**, **ul class="navbar-nav mb-2 mb-lg-0">** y  nos ubicamos en el ultimo elemento que se llama **Mas Vendidos** e insertamos el siguiente codigo antes de **/ul>** editando la parte del data-modulo y el contenido del **button**.<br>
+Si vemos nuestro codigo tenemos nuestro **nav class="navbar ..." id="menu-Principal"**, **div class="container-fluid">** buscamos **div class="collapse ..." id="navbarSupportedContent">**, **ul class="navbar-nav mb-2 mb-lg-0">** y nos ubicamos en el ultimo elemento que se llama **Mas Vendidos** e insertamos el siguiente codigo antes de **/ul>** editando la parte del data-modulo y el contenido del **button**.<br>
 ```html
 <button type="button" class="btn btn-primary" data-modulo="Uniformes">Uniformes</button>
 ```
@@ -74,7 +83,9 @@ Quedando de a siguiente manera:<br>
         <button type="button" class="btn btn-primary" data-modulo="comportamientoOrkestra">Comportamiento Orkestra</button>
         <button type="button" class="btn btn-primary">Formatos</button>
         <button type="button" class="btn btn-primary" data-modulo="MasVendidos">Mas Vendidos</button>
+
         <button type="button" class="btn btn-primary" data-modulo="Uniformes">Uniformes</button>
+
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
@@ -89,6 +100,7 @@ Quedando de a siguiente manera:<br>
 </nav>
 ```
 Nuestra pagina quedaria de la siguiente manera:
+
 ![Vista General de nuestra pagina de PradaMx con Boton de Uniformes](/imagenes/paginaPradaUniformes.png)
 
 ##### Paso 2: Construir los elementos de Uniformes
@@ -100,7 +112,27 @@ Al inicio de nuestro archivo **Uniformes.js** crearemos la funcion que nos expor
 ```javascript
 export default async function Uniformes() {}
 ```
-Ahora ya tenemos un modulo creado dentro de nuestra pagina. Para esto necesitamos saber que nuestra pagina principal se compone de sus filtros y su contenido, entonces comenzaremos con los filtros.<br>
+En esta funcion lo que haremos es gestionar nuestros elementos que se insertaran en el apartado de Uniformes dentro de nuestra pagina web.<br>
+Procedemos a Editar el la funcion creada **Uniformes** creando las variables que utilizaremos, en este caso crearemos una variable para el elemento que contendra nuestros filtros de Uniformes llamando a la funcion **GeneraElementoDOM()** y le asignamos un id, esto nos servira para crear todo el contenido del modulo, llamamos a la funcion **ObtieneElementoDOM()** y le añadimos nuestro contenedor, despues llamamos a nuestra funcion **FiltrosUniformes()** y le insertamos la funcion de **CargarDatos**, la cual como dice su nombre, cargara los datos que deberan ir dentro del modulo. Posteriormente retornaremos nuestro contenedor para insertarlo en el DOM, en el modulo de Uniformes de la siguiente manera en codigo:<br>
+
+```javascript
+export default async function Uniformes() {
+    const $contenedor = GeneraElementoDom("div");
+    $contenedor.id = "contenedor";
+    ObtieneElementoDom("contenido").appendChild($contenedor);
+
+    await FiltrosUniformes(CargarDatos);
+
+    CargarDatos();
+
+    return $contenedor;
+}
+```
+Hasta ahora lo que hemos creado es una referencia a nuestro contenido de nuestra pagina web y creado el boton que nos dara un espacio para nuestro modulo. Nuestra pagina queda de la siguiente manera:<br>
+
+![Imagen de la pagina creada con su referencia al contenido](/imagenes/referenciaContenido.png)
+
+Ahora ya tenemos un modulo creado con sus referencias a su contenido y sus filtros dentro de nuestra pagina. Ahora comenzaremos con los filtros, los cuales manejaran ciertos eventos que nos mostraran informacion limitada de acuerdo a los que sean seleccionados.<br>
 
 ### Filtros
 En nuestro documento creado llamado **FiltrosUniformes.js** debemos generar una funcion con la siguiente estructura.<br>

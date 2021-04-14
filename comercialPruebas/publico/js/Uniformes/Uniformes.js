@@ -19,7 +19,8 @@ export default async function Uniformes() {
 }
 
 /**
- * Esta funcion realiza la carga de los datos de un contenedor Div en el DOM
+ * Esta funcion carga los datos que se muestran en el paso 1 del tutorial {@tutorial modulo} en una lista que contiene las sucursales por las que se va a filtrar la informacion que se va a mostrar en Uniformes, ademas de cargar los datos de una Tabla dentro del contenido del modulo Uniformes llamando a la funcion de TablaUniformes 
+ * @see {@link TablaUniformes}
  * @function CargarDatos
  * @returns {void}
  */

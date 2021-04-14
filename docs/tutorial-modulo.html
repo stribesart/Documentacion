@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Inicio</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-modulo.html">Crear un Modulo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#CargarDatos">CargarDatos</a></li><li><a href="global.html#GeneraElementoDOM">Genera Elemento DOM</a></li><li><a href="global.html#ObtieneElementoDom">ObtieneElementoDom</a></li></ul>
+    <h2><a href="index.html">Inicio</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-modulo.html">Crear un Modulo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#CargarDatos">CargarDatos</a></li><li><a href="global.html#GeneraElementoDOM">Genera Elemento DOM</a></li><li><a href="global.html#ObtieneElementoDom">ObtieneElementoDom</a></li><li><a href="global.html#TablaUniformes">TablaUniformes</a></li></ul>
 </nav>
 
 <div id="main">
@@ -45,12 +45,14 @@
 
 <article>
     <p>Bienvenido, en este tutorial crearemos un modulo dentro de nuestra pagina principal de Prada Mx.<br>
-Asi es como luce nuestra pagina actual: <br>
-<img src="/imagenes/paginaPrada.png" alt="Vista General de nuestra pagina de PradaMx"></p>
+<br>
+Se solicita crear un apartado para la parte de administracion de los Uniformes en la pagina principal de Prada MX, asi es como luce nuestra pagina actual: <br></p>
+<p><img src="/imagenes/paginaPrada.png" alt="Vista General de nuestra pagina de PradaMx"></p>
+<p>Para este apartado se necesita crear un boton en el Menu anterior para poder dirigirnos al modulo de Uniformes, al cual le llamaremos <strong>Uniformes</strong>. Para esto debemos de seguir una serie de pasos que estaran descritas a continuacion.<br></p>
 <h3>Pasos a seguir</h3>
 <h5>Paso 1: Definir el nombre de nuestro modulo</h5>
-<p>Para nuestro primer paso en la creacion de nuestro modulo necesitamos definir el nombre del mismo a crear en este caso se nos pide llamarlo <strong>Uniformes</strong>.<br>
-Se necesita navegar en el proyecto <strong>comercialPruebas</strong> hasta encontrar el archivo llamado <strong>Menu.html</strong> el cual tiene una estructura como la siguiente.<br></p>
+<p>Para nuestro primer paso en la creacion de nuestro nuevo modulo necesitamos definir el nombre del mismo a crear en este caso se nos ha pedido llamarlo <strong>Uniformes</strong>.<br>
+Para este primer paso necesitamos navegar en el proyecto <strong>comercialPruebas</strong> hasta encontrar el archivo llamado <strong>Menu.html</strong> el cual tiene una estructura comun de un HTML como la siguiente.<br></p>
 <pre class="prettyprint source lang-html"><code>&lt;!DOCTYPE html>
 &lt;html lang=&quot;en&quot;>
   &lt;head>
@@ -60,7 +62,9 @@ Se necesita navegar en el proyecto <strong>comercialPruebas</strong> hasta encon
     &lt;title>PRADA Comercial&lt;/title>
   &lt;/head>
   &lt;body>
+
     &lt;nav class=&quot;navbar navbar-expand-lg navbar-light&quot; id=&quot;menu-principal&quot;>&lt;/nav>
+
     &lt;main class=&quot;container&quot;>&lt;/main>
     &lt;footer>&lt;/footer>
   &lt;/body>
@@ -74,6 +78,7 @@ Dentro de nuestra etiqueta <strong>nav</strong> encontraremos una estructura com
     &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarSupportedContent&quot; aria-controls=&quot;navbarSupportedContent&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
       &lt;span class=&quot;navbar-toggler-icon&quot;>&lt;/span>
     &lt;/button>
+
     &lt;div class=&quot;collapse navbar-collapse menu&quot; id=&quot;navbarSupportedContent&quot;>
       &lt;ul class=&quot;navbar-nav  mb-2 mb-lg-0&quot;>
         &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;Ponderados&quot;>Ponderado&lt;/button>
@@ -93,11 +98,12 @@ Dentro de nuestra etiqueta <strong>nav</strong> encontraremos una estructura com
         &lt;/li>
       &lt;/ul>
     &lt;/div>
+
   &lt;/div>
 &lt;/nav>
 </code></pre>
 <p>En esta parte de nuestro codigo vamos a crear un nuevo boton que nos va a referenciar a nuestro nuevo modulo, para esto necesitamos editar nuestro codigo de la siguiente manera.<br>
-Si vemos nuestro codigo tenemos nuestro <strong>nav class=&quot;navbar ...&quot; id=&quot;menu-Principal&quot;</strong>, <strong>div class=&quot;container-fluid&quot;&gt;</strong> buscamos <strong>div class=&quot;collapse ...&quot; id=&quot;navbarSupportedContent&quot;&gt;</strong>, <strong>ul class=&quot;navbar-nav mb-2 mb-lg-0&quot;&gt;</strong> y  nos ubicamos en el ultimo elemento que se llama <strong>Mas Vendidos</strong> e insertamos el siguiente codigo antes de <strong>/ul&gt;</strong> editando la parte del data-modulo y el contenido del <strong>button</strong>.<br></p>
+Si vemos nuestro codigo tenemos nuestro <strong>nav class=&quot;navbar ...&quot; id=&quot;menu-Principal&quot;</strong>, <strong>div class=&quot;container-fluid&quot;&gt;</strong> buscamos <strong>div class=&quot;collapse ...&quot; id=&quot;navbarSupportedContent&quot;&gt;</strong>, <strong>ul class=&quot;navbar-nav mb-2 mb-lg-0&quot;&gt;</strong> y nos ubicamos en el ultimo elemento que se llama <strong>Mas Vendidos</strong> e insertamos el siguiente codigo antes de <strong>/ul&gt;</strong> editando la parte del data-modulo y el contenido del <strong>button</strong>.<br></p>
 <pre class="prettyprint source lang-html"><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;Uniformes&quot;>Uniformes&lt;/button>
 </code></pre>
 <p>Quedando de a siguiente manera:<br></p>
@@ -115,7 +121,9 @@ Si vemos nuestro codigo tenemos nuestro <strong>nav class=&quot;navbar ...&quot;
         &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;comportamientoOrkestra&quot;>Comportamiento Orkestra&lt;/button>
         &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;>Formatos&lt;/button>
         &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;MasVendidos&quot;>Mas Vendidos&lt;/button>
+
         &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;Uniformes&quot;>Uniformes&lt;/button>
+
       &lt;/ul>
       &lt;ul class=&quot;navbar-nav&quot;>
         &lt;li class=&quot;nav-item dropdown&quot;>
@@ -129,8 +137,8 @@ Si vemos nuestro codigo tenemos nuestro <strong>nav class=&quot;navbar ...&quot;
   &lt;/div>
 &lt;/nav>
 </code></pre>
-<p>Nuestra pagina quedaria de la siguiente manera:
-<img src="/imagenes/paginaPradaUniformes.png" alt="Vista General de nuestra pagina de PradaMx con Boton de Uniformes"></p>
+<p>Nuestra pagina quedaria de la siguiente manera:</p>
+<p><img src="/imagenes/paginaPradaUniformes.png" alt="Vista General de nuestra pagina de PradaMx con Boton de Uniformes"></p>
 <h5>Paso 2: Construir los elementos de Uniformes</h5>
 <p>Una vez creado el nuevo boton se tendra que crear una carpeta dentro de la carpeta <strong>publico</strong> dentro de la carpeta <strong>js</strong> nombrada de la misma manera que el boton, en este caso crearemos nuestra carpeta <strong>Uniformes</strong>. <br>
 Una vez creada la carpeta podemos comenzar el desarrollo de nuestra pagina.<br>
@@ -139,7 +147,23 @@ Crearemos un nuevo documento llamandolo <strong>Uniformes.js</strong> y un archi
 Al inicio de nuestro archivo <strong>Uniformes.js</strong> crearemos la funcion que nos exportara nuestra pagina ya construida, de la siguiente manera:<br></p>
 <pre class="prettyprint source lang-javascript"><code>export default async function Uniformes() {}
 </code></pre>
-<p>Ahora ya tenemos un modulo creado dentro de nuestra pagina. Para esto necesitamos saber que nuestra pagina principal se compone de sus filtros y su contenido, entonces comenzaremos con los filtros.<br></p>
+<p>En esta funcion lo que haremos es gestionar nuestros elementos que se insertaran en el apartado de Uniformes dentro de nuestra pagina web.<br>
+Procedemos a Editar el la funcion creada <strong>Uniformes</strong> creando las variables que utilizaremos, en este caso crearemos una variable para el elemento que contendra nuestros filtros de Uniformes llamando a la funcion <strong>GeneraElementoDOM()</strong> y le asignamos un id, esto nos servira para crear todo el contenido del modulo, llamamos a la funcion <strong>ObtieneElementoDOM()</strong> y le añadimos nuestro contenedor, despues llamamos a nuestra funcion <strong>FiltrosUniformes()</strong> y le insertamos la funcion de <strong>CargarDatos</strong>, la cual como dice su nombre, cargara los datos que deberan ir dentro del modulo. Posteriormente retornaremos nuestro contenedor para insertarlo en el DOM, en el modulo de Uniformes de la siguiente manera en codigo:<br></p>
+<pre class="prettyprint source lang-javascript"><code>export default async function Uniformes() {
+    const $contenedor = GeneraElementoDom(&quot;div&quot;);
+    $contenedor.id = &quot;contenedor&quot;;
+    ObtieneElementoDom(&quot;contenido&quot;).appendChild($contenedor);
+
+    await FiltrosUniformes(CargarDatos);
+
+    CargarDatos();
+
+    return $contenedor;
+}
+</code></pre>
+<p>Hasta ahora lo que hemos creado es una referencia a nuestro contenido de nuestra pagina web y creado el boton que nos dara un espacio para nuestro modulo. Nuestra pagina queda de la siguiente manera:<br></p>
+<p><img src="/imagenes/referenciaContenido.png" alt="Imagen de la pagina creada con su referencia al contenido"></p>
+<p>Ahora ya tenemos un modulo creado con sus referencias a su contenido y sus filtros dentro de nuestra pagina. Ahora comenzaremos con los filtros, los cuales manejaran ciertos eventos que nos mostraran informacion limitada de acuerdo a los que sean seleccionados.<br></p>
 <h3>Filtros</h3>
 <p>En nuestro documento creado llamado <strong>FiltrosUniformes.js</strong> debemos generar una funcion con la siguiente estructura.<br></p>
 <pre class="prettyprint source lang-javascript"><code>export async function FiltrosUniformes(cbChange) {}
@@ -155,7 +179,7 @@ Al inicio de nuestro archivo <strong>Uniformes.js</strong> crearemos la funcion 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Tue Apr 13 2021 20:43:00 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Wed Apr 14 2021 10:57:52 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

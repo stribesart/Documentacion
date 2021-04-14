@@ -13,6 +13,7 @@
     "recurse": "true",
     "destination": "./docs",
     "template": "node_modules/docdash",
-    "tutorials": "./tutoriales"
+    "tutorials": "./tutoriales",
+    "readme": "./README.md"
   }
 }
