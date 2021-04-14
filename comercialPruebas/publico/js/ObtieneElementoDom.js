@@ -10,6 +10,8 @@
  * @param {object} AIdElemento - Id del elemento del DOM.
  * @param {object} AQuery - Clase del elemento del DOM.
  * @returns {objeto}
+ * @example
+ * ObtieneElementoDom("idElemento");
  */
 export function ObtieneElementoDom(AIdElemento, AQuery = false){
  return AQuery

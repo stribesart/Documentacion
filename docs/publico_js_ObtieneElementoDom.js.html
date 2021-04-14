@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Inicio - Documentation</title>
+    <title>publico/js/ObtieneElementoDom.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Inicio</h1>
+    <h1 class="page-title">publico/js/ObtieneElementoDom.js</h1>
     
 
     
@@ -40,32 +40,30 @@
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+/**
+ * Este tipo de dato identifica un elemento del DOM
+ * @typedef {Object} objeto
+ */
 
-
-    <section class="package">
-        <h3> </h3>		
+/**
+ * Esta funcion lo que hace es identificar un elemento del DOM y lo regresa como un Objeto.
+ * @type {objeto}
+ * @param {object} AIdElemento - Id del elemento del DOM.
+ * @param {object} AQuery - Clase del elemento del DOM.
+ * @returns {objeto}
+ * @example
+ * ObtieneElementoDom("idElemento");
+ */
+export function ObtieneElementoDom(AIdElemento, AQuery = false){
+ return AQuery
+  ? document.getElementsByClassName(AIdElemento) 
+  : document.getElementById(AIdElemento);
+}</code></pre>
+        </article>
     </section>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-    <section class="readme usertext">
-        <article><h2>Documentacion de la pagina de Prada MX</h2>
-<p>En esta pagina se documenta el codigo relacionado al proyecto de <a href="http://oficinas.prada.mx:72/comercialPruebas/">Prada MX</a> donde se describe cada una de las funciones que se utilizaron o utilizaran para crear dicho proyecto.<br>
-Cuenta con un tutorial acerca de como crear <strong>Modulos</strong> dentro de dicha pagina<br>
-Para mas informacion contacto con DCSR.</p></article>
-    </section>
-
-
 
 
 

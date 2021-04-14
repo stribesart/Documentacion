@@ -19,8 +19,9 @@ export default async function Uniformes() {
 }
 
 /**
- * Esta funcion carga los datos que se muestran en el paso 1 del tutorial {@tutorial modulo} en una lista que contiene las sucursales por las que se va a filtrar la informacion que se va a mostrar en Uniformes, ademas de cargar los datos de una Tabla dentro del contenido del modulo Uniformes llamando a la funcion de TablaUniformes 
- * @see {@link TablaUniformes}
+ * Esta funcion carga los datos que se muestran en el paso 1 del tutorial {@tutorial modulo} en una lista que contiene las sucursales por las que se va a filtrar la informacion que se va a mostrar en Uniformes, ademas de cargar los datos de una Tabla dentro del contenido del modulo Uniformes llamando a la funcion de {@link TablaUniformes}
+ * @see TablaUniformes
+ * @see ajax_post
  * @function CargarDatos
  * @returns {void}
  */

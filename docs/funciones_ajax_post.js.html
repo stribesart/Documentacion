@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Inicio - Documentation</title>
+    <title>funciones/ajax_post.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Inicio</h1>
+    <h1 class="page-title">funciones/ajax_post.js</h1>
     
 
     
@@ -40,32 +40,33 @@
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Esta funcion consume una api AjaxPost.
+ * @param {object} props Objeto que contiene la direccion de donde se consumira una api, los parametros que consume esa api y una funcion Success que se ejecuta si se consume correctamente la api.
+ */
+export async function ajax_post(props){
+    const { url, params, cbSuccess} = props;
 
-
-    <section class="package">
-        <h3> </h3>		
+    const options = {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-type":"application/json; charset=utf-8"
+        },
+        data: params
+    };
+    await axios(url, options)
+    .then(response => {
+     cbSuccess(response.data);
+    })
+    .catch(e => {
+     console.log(e);
+    });
+}</code></pre>
+        </article>
     </section>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-    <section class="readme usertext">
-        <article><h2>Documentacion de la pagina de Prada MX</h2>
-<p>En esta pagina se documenta el codigo relacionado al proyecto de <a href="http://oficinas.prada.mx:72/comercialPruebas/">Prada MX</a> donde se describe cada una de las funciones que se utilizaron o utilizaran para crear dicho proyecto.<br>
-Cuenta con un tutorial acerca de como crear <strong>Modulos</strong> dentro de dicha pagina<br>
-Para mas informacion contacto con DCSR.</p></article>
-    </section>
-
-
 
 
 

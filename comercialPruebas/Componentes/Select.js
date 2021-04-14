@@ -1,5 +1,11 @@
 import { llenaLista } from "../funciones/llenaLista.js";
 
+/**
+ * Funcion que crea una lista dentro de nuestro DOM consumiendo una api desde {@link ajax_post}.
+ * @param {object} AOpciones - Objeto que contiene datos para consumir un api.
+ * @param {number} ACheck - Parametro que nos dice si traera un checkbox o no.
+ * @returns {objeto}
+ */
 export async function Select(AOpciones, ACheck = 0) { //Funcion que crea Selects en el Promociones.php
     let { nombreTabla, url, valor } = AOpciones;
     let params = AOpciones.params;

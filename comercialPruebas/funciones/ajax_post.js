@@ -1,3 +1,7 @@
+/**
+ * Esta funcion consume una api AjaxPost.
+ * @param {object} props Objeto que contiene la direccion de donde se consumira una api, los parametros que consume esa api y una funcion Success que se ejecuta si se consume correctamente la api.
+ */
 export async function ajax_post(props){
     const { url, params, cbSuccess} = props;
 

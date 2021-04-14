@@ -134,8 +134,78 @@ Hasta ahora lo que hemos creado es una referencia a nuestro contenido de nuestra
 
 Ahora ya tenemos un modulo creado con sus referencias a su contenido y sus filtros dentro de nuestra pagina. Ahora comenzaremos con los filtros, los cuales manejaran ciertos eventos que nos mostraran informacion limitada de acuerdo a los que sean seleccionados.<br>
 
-### Filtros
+##### Paso 3: Construir los Filtros.
+### Filtros 
 En nuestro documento creado llamado **FiltrosUniformes.js** debemos generar una funcion con la siguiente estructura.<br>
 ```javascript
 export async function FiltrosUniformes(cbChange) {}
 ```
+En esta funcion tenemos que construir cada elemento con el que interactuara nuestro modulo de Uniformes, para esto hay que definir que tipo de filtros tenemos que crear y cual sera la funcionalidad.<br>
+Se sabe que nuestro apartado de uniformes debera contener una estructura como la siguiente pantalla: 
+
+![Imagen de prada Productivo Modulo Uniformes](/imagenes/pantallaPradaProductivoUniformes.png)
+
+Entonces comencemos<br><br>
+Necesitaremos 4 botones ya que el boton de regresar ya no es necesario en esta pagina, vemos que la tabla que se muestra en el contenido podra filtrarse por sucursal por lo tanto crearemos una lista que nos permita filtrar por dicho parametro. Una vez analizado lo que se nos pide procederemos a la insercion de nuestros **Filtros**.
+##### Filtros 3.1
+Para la creacion de nuestros filtros como ya sabemos tenemos nuestro archivo **FiltrosUniformes.js** que creamos junto con **Uniformes.js**.<br>
+Crearemos una funcion llamada **FiltrosUniformes()** y la exportaremos como default para cargarla y utilizarla en **Uniformes.js**, ya que llenaremos nuestra lista dinamicamente la tendremos que hacer asincrona (vease **[Select](http://127.0.0.1:5500/docs/global.html#Select)**), ademas le pasaremos un parametro que se tendra que ejecutar cuando le añadamos evento change. Nuestro codigo deberia verse de la siguiente manera:
+```javascript
+export async function FiltrosUniformes(cbChange) {}
+```
+###### Lista Sucursales
+Dentro de nuestra funcion de filtros utilizaremos la funcion **Select** para crear nuestra lista con el codigo siguiente:
+```javascript
+export async function FiltrosUniformes(cbChange) {
+  const elemento = GeneraElementoDom("div");
+  const $filtros = ObtieneElementoDom("filtros");
+  const idSucursal = ObtieneVariableSession("idPonderado") === 3 ? ObtieneVariableSession("idPonderado") : "";
+  $filtros.innerHTML = null;
+  elemento.appendChild(
+    await Select({
+      nombreTabla: "Sucursal",
+      params: {
+        campoValue: "suc01",
+        campoDescripcion: "suc03",
+        idSucursal: idSucursal
+      },
+      url: ObtieneUrl("php/Uniformes/", "ObtieneSucursalesUniformes.php")
+    })
+  );
+}
+```
+Como podemos ver se crea una variable la cual [crea un elemento en el DOM](http://127.0.0.1:5500/docs/global.html#GeneraElementoDOM) (un div), ademas se crea una variable que almacenara un valor del session storage (vease [ObtieneVariableSession](http://127.0.0.1:5500/docs/global.html#ObtieneVariableSession)), la cual condicionamos a si es 3 que obtenga cierto valor y si no es 3 que lo mande como vacio, creamos una variable que obtenga la parte de los filtros de nuestro modulo Uniformes (vease [ObtieneElementoDOM](http://127.0.0.1:5500/docs/global.html#ObtieneElementoDom)). Posteriormente cada vez que se entre a uniformes se tendra que limpiar la seccion de los filtros y lo hacemos con un null, despues a nuestro elemento div le añadimos nuestra lista llamando a nuestra funcion Select con sus respectivos parametros (vease **[Select](http://127.0.0.1:5500/docs/global.html#Select)**), y listo tendremos creada nuestro primer filtro y nuestra pagina se vera de la siguiente manera:
+
+![Imagen de Uniformes con el primer Filtro](/imagenes/UniformesPrimerFiltro.png)
+
+Como podemos ver nuestra lista ya fue creada e incluso ya fue llenada. Procederemos con los botones que necesitamos crear y para esto continuaremos editando nuestro archivo.<br>
+###### Botones
+Para crear nuestros botones tenemos un componente que ya nos crea nuestros Botones (vease [Button](http://127.0.0.1:5500/docs/global.html#Button)), este componente lo llamaremos 4 veces ya que necesitamos 4 botones diferentes, nuestro codigo quedaria de la siguiente manera:<br>
+
+```javascript
+export async function FiltrosUniformes(cbChange) {
+  const elemento = GeneraElementoDom("div");
+  const $filtros = ObtieneElementoDom("filtros");
+  const idSucursal = ObtieneVariableSession("idPonderado") === 3 ? ObtieneVariableSession("idPonderado") : "";
+  $filtros.innerHTML = null;
+  elemento.appendChild(await Select({
+    nombreTabla: "Sucursal",
+    params: {
+      campoValue: "suc01",
+      campoDescripcion: "suc03",
+      idSucursal: idSucursal
+    },
+    url: ObtieneUrl("php/Uniformes/", "ObtieneSucursalesUniformes.php")
+  })
+);
+  elemento.appendChild(Button("Solicitar","Solicitar","btn-secondary","modulo-uniformes","SolicitarUniformes"));
+  elemento.appendChild(Button("Aceptar","Aceptar","btn-secondary","modulo-uniformes","AceptarUniformes"));
+  elemento.appendChild(Button("Rechazar","Rechazar","btn-secondary"));
+  elemento.appendChild(Button("Formato","Formato","btn-secondary"));
+}
+```
+Nuestra pagina se vera de la siguiente manera:<br>
+
+![Imagen de Uniformes con todos los Filtros](/imagenes/filtrosCompletos.png)
+
+Hasta este punto hemos creado nuestros elementos en el HTML de la parte de nuestros filtros, nos faltaran nuestros eventos pero eso dependera del modulo, lo veremos a continuacion.<br>
