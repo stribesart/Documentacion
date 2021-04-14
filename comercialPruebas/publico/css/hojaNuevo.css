@@ -1,0 +1,370 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* No olvides definir estilos para focus */
+:focus {
+  outline: 0;
+}
+
+/* No olvides resaltar de alguna manera el texto insertado/borrado */
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+
+/* En el código HTML es necesario añadir cellspacing="0" */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/*Estilos de la aplicacion*/
+/*Encabezado*/
+.encabezado{
+ display:  flex;
+ justify-content: space-between;
+ position: relative;
+ padding: 0 1rem 1rem;
+}
+
+.titulo-empresa{
+ font-size: 3rem;
+ left: 50%;
+ letter-spacing: 1em;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+}
+
+/*Login*/
+.login{
+ left: 49%;
+ overflow: hidden;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+ width: 24%;
+}
+
+.login-container input[type=text],
+.login-container input[type=password]{
+ border: 0;
+ border-bottom: 1px solid #000;
+ font-size: 1rem;
+ margin-bottom: 1rem;
+ padding: 1rem;
+ width: 100%;
+}
+
+.login-container input[type=submit]{
+ background-color: #292F36;
+ border: 0;
+ color: #fff;
+ font-size: 1.2rem;
+ font-weight: 700;
+ margin-top: 2rem;
+ padding: 1rem;
+ width: 100%;
+}
+
+.login-container input[type=text]:focus,
+.login-container input[type=password]:focus{
+ border-bottom: 2px solid #83CFE1;
+}
+
+/*Menu*/
+
+.menu{
+  justify-content: space-evenly!important;
+}
+
+.navbar-logo{
+ width: 65px;
+ background-color: #fff;
+ padding: 3px;
+}
+
+.navbar-nav button{
+  margin-left: 5px;
+}
+
+.left-dropdown{
+ left: -150% !important;
+}
+
+
+.filtros-container > div,
+.filtros-container form{
+  display: flex;
+  justify-content: space-between;
+  left: 50%;
+  padding-top: 15px;
+  position: absolute;
+  transform: translate(-50%);
+  width: 80%;
+}
+
+.filtros-container input[type="text"]{
+ width: 9rem;
+ text-align: center;
+}
+
+.filtros-container select{
+  border: 0;
+}
+
+.filtros-container .form-group > label{
+  display: block;
+  padding-bottom: 5px;
+}
+
+.filtro-radios{
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+}
+
+.filtro-radios label{
+  display: block;
+}
+
+.titulos{
+  font-size: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Contenido */
+.contenedor {
+  position: relative;
+  display: flex;
+  width: fit-content;
+}
+.modal-body {
+ width: 100%;
+ display: flex;
+ background-color: #ffffff;
+ font-size: .9rem;
+ margin-bottom: 20px;
+ text-align: center;
+}
+.modal-body .contenedor{
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.btn-close {
+  margin: -.5rem -.5rem -.5rem -.5rem !important;
+}
+.filtros-modal #comentarios{
+  width: 100%;
+  text-align: center;
+}
+.form-select{
+  width: fit-content;
+}
+.filtros-modal{
+  display: flex;
+  width: 100%;
+}
+
+.modal-header{
+  display: block;
+  text-align: center;
+}
+
+.modal-header #caja-filtros{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding-bottom: inherit;
+  padding-top: inherit;
+  margin-right: 10px;
+}
+.modal-header #nota{
+  margin: 0 auto;
+  width: 80%; 
+  background-color: red;
+  color: white;
+  text-align: center;
+  font-size: x-large;
+}
+.modal-header #caja-filtros .form-group{
+  display: grid;
+  margin: inherit;
+}
+
+.contenido{
+  margin-top: 10%;
+  width: 100%;
+  overflow-x: scroll;
+  /* overflow-y: scroll; */
+}
+.container{
+ max-width: 100% !important;
+}
+
+.card{
+  width: 12rem;
+}
+.card-uniformes{
+  width: 15rem;
+}
+.card-uniformes .card-img-top{
+  width: auto;
+  
+}
+
+.cardtabla-promociones-sucursal,
+.card-uniformes{
+ background-color: #fff;
+ font-size: .9rem;
+ margin-bottom: 20px;
+ text-align: center;
+}
+
+.card-body{
+  text-align: start;
+}
+
+.cardtabla-promociones-sucursal,
+.cardtabla-promociones-sucursal th,
+.cardtabla-promociones-sucursal td{
+  padding: 3px;
+  border-bottom: 1px solid #cbcdcf;
+}
+.titulo-tabla{
+  font-size: 1.5rem;
+}
+
+.table-md{
+  width: 50%;
+  margin: auto;
+}
+
+.tablaponderados{
+  background-color: #f2f2f2;
+  font-size: .9rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tablaponderados tbody tr:nth-child(odd){
+  background-color: #fff;
+}
+
+.tablaponderados,
+.tablaponderados th,
+.tablaponderados td{
+  border: 1px solid #000;
+  padding: 3px;
+}
+
+.tablaponderados .pesos{
+  text-align: right;
+}
+
+.tablaponderados .nombre{
+  text-align: left;
+}
+
+.trAzul{
+  background-color: #CCFFFF!important;
+}
+
+.trAmarillo{
+  background-color: #FFD700!important;
+}
+
+.filtros-container .panel-body{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/*Mensajes de error*/
+.mensaje-error{
+ color: red;
+ padding-top: 5px;
+}
+
+
+/*Resumen indicadores*/
+.resmenIndicadores-container{
+  display: flex;
+  white-space: nowrap;
+}
+.resmenIndicadores-container table{
+  border: 1px solid #000;
+}
+
+/* .resmenIndicadores-container table > thead > tr{
+  border-top: 1px solid #000;
+  text-align: center;
+} */
+
+
+.resmenIndicadores-container table{
+  margin-bottom: 20px;
+}
+
+.resmenIndicadores-container table:not(:first-child) td{
+  text-align: right;
+}
+
+.resmenIndicadores-container table thead{
+  text-align: center;
+}
+
+
+.resmenIndicadores-container table td, 
+.resmenIndicadores-container th{
+  padding: 6px;
+  border: 1px solid #000;
+}
+
+
+
+.resmenIndicadores-container table:nth-child(odd) tbody{
+  background-color: #f2f2f2;
+}
+
+.solicitar-uniformes{
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

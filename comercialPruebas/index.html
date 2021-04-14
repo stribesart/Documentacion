@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <link rel="stylesheet" href="publico/css/hojaNuevo.css">
+ <script src="https://kit.fontawesome.com/bf7a28b890.js" crossorigin="anonymous"></script>
+
+ <title>PRADA Comercial</title>
+</head>
+<body>
+ <header class="encabezado">
+   <img src="publico/img/Logo.png" alt="PRADA">
+   <h2 class="titulo-empresa">Prada</h2>
+   <img src="publico/img/Logo.png" alt="PRADA"> 
+  </header>
+  <div class="login">
+   <form name="edita" id="login" method="POST" autocomplete="off">
+    <div class="login-container">
+      <div class="campos">
+       <div>
+        <input class="login-input" id="login-usuario" placeholder="Usuario" type="text" name="usuario" size="10" maxength="15" required>
+       </div>
+       <div>
+        <input class="login-input" id="login-password" placeholder="Contraseña" type="password" name="password" size="10" maxength="15" required>
+       </div>
+      </div>
+      <div class="boton">
+       <input class="ingresar" type="submit" name="boton" value="Ingresar">
+      </div>
+      <p class="mensaje-error" id="error"></p>
+    </div>
+   </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="funciones/login.js" type="module"></script>
+</body>
+</html>

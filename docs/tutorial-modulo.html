@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Tutorial: Crear un Modulo - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Inicio</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-modulo.html">Crear un Modulo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#CargarDatos">CargarDatos</a></li><li><a href="global.html#GeneraElementoDOM">Genera Elemento DOM</a></li><li><a href="global.html#ObtieneElementoDom">ObtieneElementoDom</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Tutorial: Crear un Modulo</h1>
+    
+
+    <section>
+
+<header>
+    
+
+    <h2>Crear un Modulo</h2>
+</header>
+
+<article>
+    <p>Bienvenido, en este tutorial crearemos un modulo dentro de nuestra pagina principal de Prada Mx.<br>
+Asi es como luce nuestra pagina actual: <br>
+<img src="/imagenes/paginaPrada.png" alt="Vista General de nuestra pagina de PradaMx"></p>
+<h3>Pasos a seguir</h3>
+<h5>Paso 1: Definir el nombre de nuestro modulo</h5>
+<p>Para nuestro primer paso en la creacion de nuestro modulo necesitamos definir el nombre del mismo a crear en este caso se nos pide llamarlo <strong>Uniformes</strong>.<br>
+Se necesita navegar en el proyecto <strong>comercialPruebas</strong> hasta encontrar el archivo llamado <strong>Menu.html</strong> el cual tiene una estructura como la siguiente.<br></p>
+<pre class="prettyprint source lang-html"><code>&lt;!DOCTYPE html>
+&lt;html lang=&quot;en&quot;>
+  &lt;head>
+    &lt;meta charset=&quot;UTF-8&quot;>
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;>
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+    &lt;title>PRADA Comercial&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;nav class=&quot;navbar navbar-expand-lg navbar-light&quot; id=&quot;menu-principal&quot;>&lt;/nav>
+    &lt;main class=&quot;container&quot;>&lt;/main>
+    &lt;footer>&lt;/footer>
+  &lt;/body>
+&lt;/html>
+</code></pre>
+<p>Dentro de esta estructura tenemos que navegar hasta llegar a la etiqueta <strong>nav</strong> que es la que contiene los botones de nuestra pagina mostrada anteriormente.<br>
+Dentro de nuestra etiqueta <strong>nav</strong> encontraremos una estructura como la siguiente:</p>
+<pre class="prettyprint source lang-html"><code>&lt;nav class=&quot;navbar navbar-expand-lg navbar-light&quot; id=&quot;menu-principal&quot;>
+  &lt;div class=&quot;container-fluid&quot;> 
+    &lt;img class=&quot;navbar-logo&quot; src=&quot;publico/img/Logo.png&quot; alt=&quot;PRADA&quot;>
+    &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarSupportedContent&quot; aria-controls=&quot;navbarSupportedContent&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
+      &lt;span class=&quot;navbar-toggler-icon&quot;>&lt;/span>
+    &lt;/button>
+    &lt;div class=&quot;collapse navbar-collapse menu&quot; id=&quot;navbarSupportedContent&quot;>
+      &lt;ul class=&quot;navbar-nav  mb-2 mb-lg-0&quot;>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;Ponderados&quot;>Ponderado&lt;/button>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;resumenIndicadores&quot;>Resumen Indicadores&lt;/button>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;Promociones&quot;>Promociones&lt;/button>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;comportamientoOrkestra&quot;>Comportamiento Orkestra&lt;/button>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;>Formatos&lt;/button>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;MasVendidos&quot;>Mas Vendidos&lt;/button>
+      &lt;/ul>
+      &lt;ul class=&quot;navbar-nav&quot;>
+        &lt;li class=&quot;nav-item dropdown&quot;>
+          &lt;a class=&quot;nav-link dropdown-toggle&quot; id=&quot;nombre-usuario&quot; role=&quot;button&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;>
+          &lt;/a>
+          &lt;ul class=&quot;dropdown-menu dropdown-menu-dark&quot; aria-labelledby=&quot;navbarDarkDropdownMenuLink&quot;>
+            &lt;li>&lt;a id=&quot;cerrar-sesion&quot; class=&quot;dropdown-item&quot;>Cerrar Sesion&lt;/a>&lt;/li>
+          &lt;/ul>
+        &lt;/li>
+      &lt;/ul>
+    &lt;/div>
+  &lt;/div>
+&lt;/nav>
+</code></pre>
+<p>En esta parte de nuestro codigo vamos a crear un nuevo boton que nos va a referenciar a nuestro nuevo modulo, para esto necesitamos editar nuestro codigo de la siguiente manera.<br>
+Si vemos nuestro codigo tenemos nuestro <strong>nav class=&quot;navbar ...&quot; id=&quot;menu-Principal&quot;</strong>, <strong>div class=&quot;container-fluid&quot;&gt;</strong> buscamos <strong>div class=&quot;collapse ...&quot; id=&quot;navbarSupportedContent&quot;&gt;</strong>, <strong>ul class=&quot;navbar-nav mb-2 mb-lg-0&quot;&gt;</strong> y  nos ubicamos en el ultimo elemento que se llama <strong>Mas Vendidos</strong> e insertamos el siguiente codigo antes de <strong>/ul&gt;</strong> editando la parte del data-modulo y el contenido del <strong>button</strong>.<br></p>
+<pre class="prettyprint source lang-html"><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;Uniformes&quot;>Uniformes&lt;/button>
+</code></pre>
+<p>Quedando de a siguiente manera:<br></p>
+<pre class="prettyprint source lang-html"><code>&lt;nav class=&quot;navbar navbar-expand-lg navbar-light&quot; id=&quot;menu-principal&quot;>
+  &lt;div class=&quot;container-fluid&quot;> 
+    &lt;img class=&quot;navbar-logo&quot; src=&quot;publico/img/Logo.png&quot; alt=&quot;PRADA&quot;>
+    &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarSupportedContent&quot; aria-controls=&quot;navbarSupportedContent&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
+      &lt;span class=&quot;navbar-toggler-icon&quot;>&lt;/span>
+    &lt;/button>
+    &lt;div class=&quot;collapse navbar-collapse menu&quot; id=&quot;navbarSupportedContent&quot;>
+      &lt;ul class=&quot;navbar-nav  mb-2 mb-lg-0&quot;>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;Ponderados&quot;>Ponderado&lt;/button>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;resumenIndicadores&quot;>Resumen Indicadores&lt;/button>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;Promociones&quot;>Promociones&lt;/button>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;comportamientoOrkestra&quot;>Comportamiento Orkestra&lt;/button>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;>Formatos&lt;/button>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;MasVendidos&quot;>Mas Vendidos&lt;/button>
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-modulo=&quot;Uniformes&quot;>Uniformes&lt;/button>
+      &lt;/ul>
+      &lt;ul class=&quot;navbar-nav&quot;>
+        &lt;li class=&quot;nav-item dropdown&quot;>
+          &lt;a class=&quot;nav-link dropdown-toggle&quot; id=&quot;nombre-usuario&quot; role=&quot;button&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;>&lt;/a>
+          &lt;ul class=&quot;dropdown-menu dropdown-menu-dark&quot; aria-labelledby=&quot;navbarDarkDropdownMenuLink&quot;>
+            &lt;li>&lt;a id=&quot;cerrar-sesion&quot; class=&quot;dropdown-item&quot;>Cerrar Sesion&lt;/a>&lt;/li>
+          &lt;/ul>
+        &lt;/li>
+      &lt;/ul>
+    &lt;/div>
+  &lt;/div>
+&lt;/nav>
+</code></pre>
+<p>Nuestra pagina quedaria de la siguiente manera:
+<img src="/imagenes/paginaPradaUniformes.png" alt="Vista General de nuestra pagina de PradaMx con Boton de Uniformes"></p>
+<h5>Paso 2: Construir los elementos de Uniformes</h5>
+<p>Una vez creado el nuevo boton se tendra que crear una carpeta dentro de la carpeta <strong>publico</strong> dentro de la carpeta <strong>js</strong> nombrada de la misma manera que el boton, en este caso crearemos nuestra carpeta <strong>Uniformes</strong>. <br>
+Una vez creada la carpeta podemos comenzar el desarrollo de nuestra pagina.<br>
+Crearemos un nuevo documento llamandolo <strong>Uniformes.js</strong> y un archivo llamado <strong>FiltrosUniformes.js</strong>.<br>
+<img src="/imagenes/archivosCreadosEnUniformes.png" alt="Vista de nuestros archivos creados en Uniformes">
+Al inicio de nuestro archivo <strong>Uniformes.js</strong> crearemos la funcion que nos exportara nuestra pagina ya construida, de la siguiente manera:<br></p>
+<pre class="prettyprint source lang-javascript"><code>export default async function Uniformes() {}
+</code></pre>
+<p>Ahora ya tenemos un modulo creado dentro de nuestra pagina. Para esto necesitamos saber que nuestra pagina principal se compone de sus filtros y su contenido, entonces comenzaremos con los filtros.<br></p>
+<h3>Filtros</h3>
+<p>En nuestro documento creado llamado <strong>FiltrosUniformes.js</strong> debemos generar una funcion con la siguiente estructura.<br></p>
+<pre class="prettyprint source lang-javascript"><code>export async function FiltrosUniformes(cbChange) {}
+</code></pre>
+</article>
+
+</section>
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Tue Apr 13 2021 20:43:00 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+.tabla{
+  background: #F4F4F4;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.nombres{
+  background: #85A4F5 !important;
+  text-align: left;
+  padding-right: 20px;
+}
+
+.azul{
+  background: #0c4fac;
+}
+
+.amarillo{
+  background: #F4E334;
+}
+
+.espacio{
+  height:15px;
+}
+
+.meta{
+  text-align: right;
+  padding-left:2px;
+  margin-right: 10px;
+}
+
+.porecentaje{
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.titulo{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
