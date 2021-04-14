@@ -1,8 +1,19 @@
 {
-  "modulo":{
-    "title": "Creando Uniformes"
+  "tutorial": {
+    "title": "Desarrollo",
+    "children": {
+      "modulo":{
+        "title": "Creando Uniformes"
+      },
+      "moduloGeneral": {
+        "title": "Crear un Modulo en General"
+      }
+    }
   },
-  "moduloGeneral": {
-    "title": "Crear un Modulo en General"
+  "reglas": {
+    "title": "Reglas de Codificacion"
+  },
+  "organizacion":{
+    "title": "Organizacion de Archivos"
   }
 }
