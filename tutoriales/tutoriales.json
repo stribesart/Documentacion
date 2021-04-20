@@ -2,6 +2,9 @@
   "tutorial": {
     "title": "Desarrollo",
     "children": {
+      "paso1":{
+        "title":"Creando el Proyecto"
+      },
       "modulo":{
         "title": "Creando Uniformes"
       },
