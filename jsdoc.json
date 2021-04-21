@@ -1,19 +1,19 @@
 {
-  "pluggins": [],
-  "source": {
-    "include": ["comercialPruebas"],
-    "includePattern": ".js$",
-    "excludePattern": "(node_modules|docs)"
-  },
-  "templates": {
-    "cleverLinks": false,
-    "monospaceLinks": false
-  },
-  "opts": {
-    "recurse": "true",
-    "destination": "./docs",
-    "template": "node_modules/docdash",
-    "tutorials": "./tutoriales",
-    "readme": "./README.md"
+    "pluggins": [],
+    "source": {
+      "include": ["comercialPruebas"],
+      "includePattern": ".js$",
+      "excludePattern": "(node_modules|docs)"
+    },
+    "templates": {
+      "cleverLinks": false,
+      "monospaceLinks": false
+    },
+    "opts": {
+      "recurse": "true",
+      "destination": "./docs",
+      "template": "node_modules/docdash",
+      "tutorials": "./tutoriales",
+      "readme": "./README.md"
+    }
   }
-}
