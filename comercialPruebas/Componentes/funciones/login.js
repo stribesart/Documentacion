@@ -1,5 +1,10 @@
 import { ajax_post } from "./ajax_post.js";
-
+/**
+ * Variable que nos obtiene un elemento del DOM llamado login. Se le asigna un evento para que cuando se
+ * presione un elemento submit se envie el formulario a un {@link ajax_post} como json para que valide
+ * si el usuario que va a ingresar es valido y posteriormente ingresa o redirecciona.
+ * @name Formulario de Login
+ */
 const loginForm = document.getElementById("login");
 
 loginForm.addEventListener("submit", async (e) => {

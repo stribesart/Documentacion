@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>funciones/ajax_post.js - Documentation</title>
+    <title>funciones/login.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">funciones/ajax_post.js</h1>
+    <h1 class="page-title">funciones/login.js</h1>
     
 
     
@@ -42,29 +42,43 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Esta funcion consume una api AjaxPost.
- * @param {object} props Objeto que contiene la direccion de donde se consumira una api, los parametros que consume esa api y una funcion Success que se ejecuta si se consume correctamente la api.
+            <pre class="prettyprint source linenums"><code>import { ajax_post } from "./ajax_post.js";
+/**
+ * Variable que nos obtiene un elemento del DOM llamado login. Se le asigna un evento para que cuando se
+ * presione un elemento submit se envie el formulario a un {@link ajax_post} como json para que valide
+ * si el usuario que va a ingresar es valido y posteriormente ingresa o redirecciona.
+ * @name Formulario de Login
  */
-export async function ajax_post(props){
-    const { url, params, cbSuccess} = props;
+const loginForm = document.getElementById("login");
 
-    const options = {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-            "Content-type":"application/json; charset=utf-8"
-        },
-        data: params
-    };
-    await axios(url, options)
-    .then(response => {
-     cbSuccess(response.data);
-    })
-    .catch(e => {
-     console.log(e);
-    });
-}</code></pre>
+loginForm.addEventListener("submit", async (e) => {
+ e.preventDefault();
+ const usuario = document.getElementById("login-usuario").value;
+ const password = document.getElementById("login-password").value;
+
+ const data = new FormData();
+
+ data.append("usuario", usuario);
+ data.append("password", password);
+
+ await ajax_post({
+  url : "http://oficinas.prada.mx:72/comercialPruebas/php/ingreso.php",
+  params: data,
+  cbSuccess: async (json) =>{
+   if(json.hasOwnProperty("error")){
+    document.getElementById("error").innerText = json.error;
+   }else{
+    sessionStorage.setItem("claveUsuario", json.perfil["claveUsuario"]);
+    sessionStorage.setItem("idUsuario", json.perfil["idUsuario"]);
+    sessionStorage.setItem("nombreUsuario", json.perfil["nombreUsuario"]);
+    sessionStorage.setItem("tipoUsuario", json.perfil["tipoUsuario"]);
+    sessionStorage.setItem("idPonderado", json.perfil["idPonderado"]);
+
+    window.location = "http://oficinas.prada.mx:72/comercialPruebas/Menu.html";
+   }
+  }
+ });
+});</code></pre>
         </article>
     </section>
 

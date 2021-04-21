@@ -5,6 +5,9 @@
       "paso1":{
         "title":"Creando el Proyecto"
       },
+      "paso2": {
+        "title": "Creando el Login"
+      },
       "modulo":{
         "title": "Creando Uniformes"
       },
