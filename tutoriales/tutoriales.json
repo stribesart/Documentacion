@@ -8,11 +8,14 @@
       "paso2": {
         "title": "Creando el Login"
       },
-      "modulo":{
-        "title": "Creando Uniformes"
+      "paso3": {
+        "title": "Creando nuestra Barra de Navegacion"
       },
       "moduloGeneral": {
         "title": "Crear un Modulo en General"
+      },
+      "modulo":{
+        "title": "Creando Uniformes"
       }
     }
   },

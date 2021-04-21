@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Tutorial: Creando nuestra Barra de Navegacion - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Inicio</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-organizacion.html">Organizacion de Archivos</a></li><li><a href="tutorial-reglas.html">Reglas de Codificacion</a></li><li><a href="tutorial-tutorial.html">Desarrollo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ajax_post">ajax_post</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CargarDatos">CargarDatos</a></li><li><a href="global.html#FormularioLogin">FormularioLogin</a></li><li><a href="global.html#GeneraElementoDOM">GeneraElementoDOM</a></li><li><a href="global.html#LimpiarContenido">LimpiarContenido</a></li><li><a href="global.html#LimpiarElemento">LimpiarElemento</a></li><li><a href="global.html#MenuNavegacion">MenuNavegacion</a></li><li><a href="global.html#ObtieneElementoDom">ObtieneElementoDom</a></li><li><a href="global.html#ObtieneVariableSession">ObtieneVariableSession</a></li><li><a href="global.html#Select">Select</a></li><li><a href="global.html#TablaUniformes">TablaUniformes</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Tutorial: Creando nuestra Barra de Navegacion</h1>
+    
+
+    <section>
+
+<header>
+    
+
+    <h2>Creando nuestra Barra de Navegacion</h2>
+</header>
+
+<article>
+    <p>SPA(Single Page Application)
+Actualmente se requiere realizar nuestros proyectos como SPA, esto es para evitar tener tantos archivos como paginas en nuestro proyecto para esto necesitamos definir bien una barra de navegacion que es la que nos va a ayudar a cargar distinto contenido dentro de nuestra SPA.</p>
+<p>Ahora nuestro objetivo principal sera cargar este contenido de manera dinamica.</p>
+<p>Para esto en nuestro <a href="http://127.0.0.1:5500/docs/index.js.html">index.js</a> como podemos ver en el codigo lo primero que tenemos que hacer antes de cargar algo en el contenido sera <a href="http://127.0.0.1:5500/docs/global.html#LimpiarContenido">limpiar el contenido</a>, ya que, sino limpiamos el contenido antes de insertar mas contenido lo que sucedera va a ser que se insertara uno tras de otro.</p>
+<p>A continuacion lo que haremos sera crear un primer elemento en nuestra barra de navegacion, para esto en nuestro index.html tenemos que declarar la estructura de nuestra SPA (<em>vease <a href="http://127.0.0.1:5500/docs/tutorial-paso1.html">Creando el Proyecto</a></em>).</p>
+<p>Una vez definido nuestra estructura <em>HTML</em> procedemos a crear su respectivo archivo <em>JS</em> el cual contendra la logica de nuestro proyecto (<em>vease <a href="http://127.0.0.1:5500/docs/index.js.html">index.js</a></em>).</p>
+<p>Nuestro archivo <strong>index.html</strong> se veria de la siguiente manera:</p>
+<pre class="prettyprint source lang-html"><code>&lt;!DOCTYPE html>
+&lt;html lang=&quot;en&quot;>
+&lt;head>
+    &lt;meta charset=&quot;UTF-8&quot;>
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;>
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl&quot; crossorigin=&quot;anonymous&quot;>
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;publico/css/hojaCSS.css&quot;>
+    &lt;title>Nombre del Proyecto&lt;/title>
+    &lt;script src=&quot;https://kit.fontawesome.com/bf7a28b890.js&quot; crossorigin=&quot;anonymous&quot;>&lt;/script>
+&lt;/head>
+&lt;body>
+    &lt;nav class=&quot;navbar navbar-expand-lg navbar-light&quot; id=&quot;menu-principal&quot;>
+        &lt;div class=&quot;container-fluid&quot;> 
+            &lt;img class=&quot;navbar-logo&quot; src=&quot;publico/img/Logo.png&quot; alt=&quot;Empresa&quot;>
+            &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarSupportedContent&quot; aria-controls=&quot;navbarSupportedContent&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
+              &lt;span class=&quot;navbar-toggler-icon&quot;>&lt;/span>
+            &lt;/button>
+            &lt;div class=&quot;collapse navbar-collapse menu&quot; id=&quot;navbarSupportedContent&quot;>
+                &lt;ul class=&quot;navbar-nav&quot;>&lt;/ul>
+            &lt;/div>
+        &lt;/div>
+    &lt;/nav>
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js&quot;>&lt;/script>
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js&quot;>&lt;/script>
+
+    &lt;script src=&quot;index.js&quot; type=&quot;module&quot;>&lt;/script>
+    &lt;/body>
+&lt;/html>
+</code></pre>
+<p>Como vemos solo hemos creado la estructura de nuestra barra de navegacion, este es el formato que se debe llevar para poder crearla, posteriormente se va a llenar de elementos y eventos que seran necesarios segun se requieran, ademas de que necesitamos insertarle elementos a nuestra barra de navegacion (vease <a href="">Crear un Modulo</a>).</p>
+<p><strong><a href="http://127.0.0.1:5500/docs/tutorial-moduloGeneral.html">Siguiente.</a></strong></p>
+</article>
+
+</section>
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Wed Apr 21 2021 14:15:50 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

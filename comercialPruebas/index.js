@@ -5,6 +5,12 @@
 import { limpiarContenido } from "./publico/js/limpiarContenido.js";
 import { ObtieneElementoDom } from "./publico/js/obtieneElementoDom.js";
 
+/**
+ * Se crea una variable llamada menu, esta varible nos sirve de apoyo para agregar el evento para cada
+ * modulo que se ira creando. En este archivo se agrega el evento al menu para poder cargar contenido
+ * diferente por elemento del menu.
+ * @name MenuNavegacion
+ */
 const $menu = document.getElementById("menu-principal");
 
 $menu.addEventListener("click", async (e)=>{

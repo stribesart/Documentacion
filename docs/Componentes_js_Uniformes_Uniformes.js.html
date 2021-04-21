@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Tutorial: Organizacion de Archivos - Documentation</title>
+    <title>Componentes/js/Uniformes/Uniformes.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,30 +32,70 @@
 
 <div id="main">
     
-    <h1 class="page-title">Tutorial: Organizacion de Archivos</h1>
+    <h1 class="page-title">Componentes/js/Uniformes/Uniformes.js</h1>
     
 
+    
+
+
+
+    
     <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { ajax_post } from "../../../funciones/ajax_post.js";
+import { FiltrosUniformes } from "./FiltrosUniformes.js";
+import { GeneraElementoDom } from "../GeneraElementoDom.js";
+import { ObtieneElementoDom } from "../ObtieneElementoDom.js";
+import { ObtieneUrl } from "../ObtieneUrl.js";
+import { ObtieneVariableSession } from "../ObtieneVariableSession.js";
+import { TablaUniformes } from "./TablaUniformes.js";
 
-<header>
-    
+export default async function Uniformes() {
+    const $contenedor = GeneraElementoDom("div");
+    $contenedor.id = "contenedor";
+    ObtieneElementoDom("contenido").appendChild($contenedor);
 
-    <h2>Organizacion de Archivos</h2>
-</header>
+    await FiltrosUniformes(CargarDatos);
 
-<article>
-    <p>Para la organizacion de nuestro proyecto se debe cumplir lo siguiente.</p>
-<p>La carpeta principal se debe llamar igual que el proyecto esto con el fin de que nuestro proyecto sea fácil de identificar.</p>
-<p>Dentro de la carpeta principal se encontrarán 3 carpetas: los <strong>archivos .js</strong>, la carpeta <strong>publico</strong> y los <strong>PHP</strong> al igual que los archivos principales que seran llamados <strong>index.js</strong> e <strong>index.html</strong>.</p>
-<p>Dentro de nuestra carpeta <strong>js</strong> deben de ir todos los archivos <strong>.js</strong> (a excepción del index.js). Esta carpeta se organizará de la siguiente manera: en la raíz de la carpeta se encontrarán todos los componentes, se creará una carpeta llamada <strong>funciones</strong>, se creará una carpeta exclusiva para los módulos del proyecto llamada <strong>aplicación</strong>.</p>
-<p>Dentro de la carpeta <strong>funciones</strong> se almacenaran archivos .js que contengan funciones referentes al framework.</p>
-<p>Dentro de la carpeta <strong>aplicacion</strong> en la raíz de dicha carpeta se encontrarán todas las funciones relacionadas con la aplicación, también se debe crear una carpeta por cada módulo que se cree y cada uno tendrá de raíz dos archivos llamados <strong>módulo.js</strong> y <strong>filtrosModulo.js</strong>.</p>
-<p>Dentro de nuestra carpeta <strong>publico</strong> deben de ir todos nuestros archivos que, valga la redundancia, se consumirán en el proyecto, ejemplo de estos son: imágenes, CSS, servicios de SMTP, etc.</p>
-<p>Dentro de la carpeta <strong>php</strong> se debe crear una estructura similar a la de <strong>aplicación</strong> ya que se deben crear en la raíz una carpeta por cada modulo que va a consumir dichos archivos.</p>
-<p><img src="/imagenes/OrganizacionArchivos/index.jpeg" alt="OrgProyecto"></p>
-</article>
+    CargarDatos();
 
-</section>
+    return $contenedor;
+}
+
+/**
+ * Esta funcion carga los datos que se muestran en el paso 1 del tutorial {@tutorial modulo} en una lista que contiene las sucursales por las que se va a filtrar la informacion que se va a mostrar en Uniformes, ademas de cargar los datos de una Tabla dentro del contenido del modulo Uniformes llamando a la funcion de {@link TablaUniformes}
+ * @see TablaUniformes
+ * @see ajax_post
+ * @function CargarDatos
+ * @returns {void}
+ */
+function CargarDatos() {
+    const data = new FormData();
+    const $contenedor = ObtieneElementoDom("contenedor");
+    data.append(
+        "idSucursal", ObtieneElementoDom("idSucursal").value
+    );
+    data.append(
+        "tipoUsuario", ObtieneVariableSession("tipoUsuario")
+    );
+    ajax_post({
+        url: ObtieneUrl("php/Uniformes/", "ObtieneUniformes.php"),
+        params: data,
+        cbSuccess: (json) => {
+            $contenedor.innerHTML = null;
+            $contenedor.appendChild(TablaUniformes({
+                json: json,
+                id: "tablaUniformes",
+                sizeClass: "lg"
+            }));
+        }
+    });
+}</code></pre>
+        </article>
+    </section>
+
+
+
 
     
     
