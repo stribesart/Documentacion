@@ -176,7 +176,7 @@ Se sabe que nuestro apartado de uniformes debera contener una estructura como la
 Necesitaremos 4 botones ya que el boton de regresar ya no es necesario en esta pagina, vemos que la tabla que se muestra en el contenido podra filtrarse por sucursal por lo tanto crearemos una lista que nos permita filtrar por dicho parametro. Una vez analizado lo que se nos pide procederemos a la insercion de nuestros <strong>Filtros</strong>.</p>
 <h5>Filtros 3.1</h5>
 <p>Para la creacion de nuestros filtros como ya sabemos tenemos nuestro archivo <strong>FiltrosUniformes.js</strong> que creamos junto con <strong>Uniformes.js</strong>.<br>
-Crearemos una funcion llamada <strong>FiltrosUniformes()</strong> y la exportaremos como default para cargarla y utilizarla en <strong>Uniformes.js</strong>, ya que llenaremos nuestra lista dinamicamente la tendremos que hacer asincrona (vease <strong><a href="http://127.0.0.1:5500/docs/global.html#Select">Select</a></strong>), ademas le pasaremos un parametro que se tendra que ejecutar cuando le añadamos evento change. Nuestro codigo deberia verse de la siguiente manera:</p>
+Crearemos una funcion llamada <strong>FiltrosUniformes()</strong> y la exportaremos como default para cargarla y utilizarla en <strong>Uniformes.js</strong>, ya que llenaremos nuestra lista dinamicamente la tendremos que hacer asincrona (vease <strong><a href="https://stribesart.github.io/Documentacion/global.html#Select">Select</a></strong>), ademas le pasaremos un parametro que se tendra que ejecutar cuando le añadamos evento change. Nuestro codigo deberia verse de la siguiente manera:</p>
 <pre class="prettyprint source lang-javascript"><code>export async function FiltrosUniformes(cbChange) {}
 </code></pre>
 <h6>Lista Sucursales</h6>
@@ -199,11 +199,11 @@ Crearemos una funcion llamada <strong>FiltrosUniformes()</strong> y la exportare
   );
 }
 </code></pre>
-<p>Como podemos ver se crea una variable la cual <a href="http://127.0.0.1:5500/docs/global.html#GeneraElementoDOM">crea un elemento en el DOM</a> (un div), ademas se crea una variable que almacenara un valor del session storage (vease <a href="http://127.0.0.1:5500/docs/global.html#ObtieneVariableSession">ObtieneVariableSession</a>), la cual condicionamos a si es 3 que obtenga cierto valor y si no es 3 que lo mande como vacio, creamos una variable que obtenga la parte de los filtros de nuestro modulo Uniformes (vease <a href="http://127.0.0.1:5500/docs/global.html#ObtieneElementoDom">ObtieneElementoDOM</a>). Posteriormente cada vez que se entre a uniformes se tendra que limpiar la seccion de los filtros y lo hacemos con un null, despues a nuestro elemento div le añadimos nuestra lista llamando a nuestra funcion Select con sus respectivos parametros (vease <strong><a href="http://127.0.0.1:5500/docs/global.html#Select">Select</a></strong>), y listo tendremos creada nuestro primer filtro y nuestra pagina se vera de la siguiente manera:</p>
+<p>Como podemos ver se crea una variable la cual <a href="https://stribesart.github.io/Documentacion/global.html#GeneraElementoDOM">crea un elemento en el DOM</a> (un div), ademas se crea una variable que almacenara un valor del session storage (vease <a href="https://stribesart.github.io/Documentacion/global.html#ObtieneVariableSession">ObtieneVariableSession</a>), la cual condicionamos a si es 3 que obtenga cierto valor y si no es 3 que lo mande como vacio, creamos una variable que obtenga la parte de los filtros de nuestro modulo Uniformes (vease <a href="https://stribesart.github.io/Documentacion/global.html#ObtieneElementoDom">ObtieneElementoDOM</a>). Posteriormente cada vez que se entre a uniformes se tendra que limpiar la seccion de los filtros y lo hacemos con un null, despues a nuestro elemento div le añadimos nuestra lista llamando a nuestra funcion Select con sus respectivos parametros (vease <strong><a href="https://stribesart.github.io/Documentacion/global.html#Select">Select</a></strong>), y listo tendremos creada nuestro primer filtro y nuestra pagina se vera de la siguiente manera:</p>
 <p><img src="/imagenes/UniformesPrimerFiltro.png" alt="Imagen de Uniformes con el primer Filtro"></p>
 <p>Como podemos ver nuestra lista ya fue creada e incluso ya fue llenada. Procederemos con los botones que necesitamos crear y para esto continuaremos editando nuestro archivo.<br></p>
 <h6>Botones</h6>
-<p>Para crear nuestros botones tenemos un componente que ya nos crea nuestros Botones (vease <a href="http://127.0.0.1:5500/docs/global.html#Button">Button</a>), este componente lo llamaremos 4 veces ya que necesitamos 4 botones diferentes, nuestro codigo quedaria de la siguiente manera:<br></p>
+<p>Para crear nuestros botones tenemos un componente que ya nos crea nuestros Botones (vease <a href="https://stribesart.github.io/Documentacion/global.html#Button">Button</a>), este componente lo llamaremos 4 veces ya que necesitamos 4 botones diferentes, nuestro codigo quedaria de la siguiente manera:<br></p>
 <pre class="prettyprint source lang-javascript"><code>export async function FiltrosUniformes(cbChange) {
   const elemento = GeneraElementoDom(&quot;div&quot;);
   const $filtros = ObtieneElementoDom(&quot;filtros&quot;);
@@ -239,7 +239,7 @@ Crearemos una funcion llamada <strong>FiltrosUniformes()</strong> y la exportare
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Sat Apr 24 2021 10:57:54 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Sat Apr 24 2021 11:11:41 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
