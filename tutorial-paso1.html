@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Tutorial: Creando el Proyecto - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Inicio</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-organizacion.html">Organizacion de Archivos</a></li><li><a href="tutorial-reglas.html">Reglas de Codificacion</a></li><li><a href="tutorial-tutorial.html">Desarrollo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ajax_post">ajax_post</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CargarDatos">CargarDatos</a></li><li><a href="global.html#FormularioLogin">FormularioLogin</a></li><li><a href="global.html#GeneraElementoDOM">GeneraElementoDOM</a></li><li><a href="global.html#LimpiarContenido">LimpiarContenido</a></li><li><a href="global.html#LimpiarElemento">LimpiarElemento</a></li><li><a href="global.html#MenuNavegacion">MenuNavegacion</a></li><li><a href="global.html#ObtieneElementoDom">ObtieneElementoDom</a></li><li><a href="global.html#ObtieneVariableSession">ObtieneVariableSession</a></li><li><a href="global.html#Select">Select</a></li><li><a href="global.html#TablaUniformes">TablaUniformes</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Tutorial: Creando el Proyecto</h1>
+    
+
+    <section>
+
+<header>
+    
+
+    <h2>Creando el Proyecto</h2>
+</header>
+
+<article>
+    <p>Una vez creada nuestra estructura donde ira nuestro proyecto tenemos que definir el nombre del proyecto, para esto se debe consultar con el cliente o con el encargado del proyecto.</p>
+<p>Sustituya el nombre de la carpter <strong>nombreProyecto</strong> por el nombre del proyecto.</p>
+<p>Ahora antes de cualquier cosa debemos que comenzar con nuestra estructura <em>HTML</em> para nuestro sistema, debemos definir con el equipo una estructura para la pagina en general para saber como se va a trabajar la pagina web.</p>
+<p>Como sabemos cada pagina debe de manejar una pagina exclusiva de login, esto es con el fin de que nuestros filtros funcionen con la informacion que provee cada usuario, por lo tanto crearemos un archivo html en la raiz de nuestra carpeta <strong>nombreProyecto</strong> llamado <strong>login</strong>, en este archivo vamos a definir nuestra estructura de login normal empezando con el logo o titulo de nuestra empresa o proyecto para saber a donde vamos a ingresar, una caja de texto para un nombre de usuario, correo o numero de empleado, una caja de texto para su contraseña, botones de ingresar, iniciar o entrar y sus botones de recuperar contraseña y si se requiere algun tipo de footer donde se ingresaria informacion extra. Como ya sabemos <em>cada archivo HTML va a llevar su respectivo archivo js</em> entonces crearemos un archivo javascript llamado login. En el archivo login.js crearemos la logica de nuestro login.</p>
+<p><img src="/imagenes/OrganizacionArchivos/loginhtml.jpeg" alt="ImagenLogin"></p>
+<p>Dentro del documento index sabemos que hay que poner el Titulo del sitio web o el logotipo, incluso ambas en algunas excepciones pero tambien depende de como se ha definido la estructura con el equipo, tambien sabemos que necesitamos una barra de navegacion, la estructura general que se debe seguir es cargar toda la informacion en la pagina principal haciendo esta pagina ___, ademas nuestra pagina contendra un menu de lista que nos diga que usuario esta logueado y que opciones tendra ademas de la de cerrar sesion.  Posteriormente en nuestro cuerpo de la pagina debemos divirlo en 3 partes: la parte de los filtros o cabecera del cuerpo de pagina, el cuerpo de pagina que es donde iran toda la informacion que queremos mostrar al usuario, por ultimo un footer o pie de pagina si es que lo requiere el usuario, toda estructura hay que definirla en el archivo <strong>index.html</strong>. Y como ya lo hemos visto tambien crearemos un archivo index.js que es el que le insertara la logica a nuestro proyecto.</p>
+<p><img src="/imagenes/OrganizacionArchivos/indexHTML.jpeg" alt="Imagen que nos define la agrupacion de contenido"></p>
+<p><strong><a href="http://127.0.0.1:5500/docs/tutorial-paso2.html">Siguiente.</a></strong></p>
+</article>
+
+</section>
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Sat Apr 24 2021 09:58:54 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
