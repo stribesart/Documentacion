@@ -1,5 +1,5 @@
 ### Descripción
-En este manual se define el estándar de programación general para el proyecto de EMICOFI en JavaScript, se va a definir como declarar variables, constantes, funciones, clases, etc, al momento de programar. Se dará una breve explicación de que consiste cada elemento y un formato a seguir para cada uno así como una estructura que hay que respetar para la declaración, tanto de funciones, como de clases. Veremos la estructura de archivos que se tendrá que respetar para facilitar la búsqueda de archivos dentro del proyecto.
+En este manual se define el estándar de programación general para cualquier proyecto que se desarrollara en DCSR, se va a definir como declarar variables, constantes, funciones, clases, etc, al momento de programar. Se dará una breve explicación de que consiste cada elemento y un formato a seguir para cada uno así como una estructura que hay que respetar para la declaración, tanto de funciones, como de clases. Veremos la estructura de archivos que se tendrá que respetar para facilitar la búsqueda de archivos dentro del proyecto.
 
 ### Análisis
 Nuestro estándar de programación necesitara ciertos criterios que se tendrán que cumplir para poder desarrollar las reglas que se proponen a continuación, para esto hay que definir bien lo que tenemos que saber previamente de cumplir las reglas.
@@ -16,18 +16,18 @@ Las reglas de nuestro estándar de programación deben ser:
 •	El código debe tener consistencia para que el código sea legible.
 
 ### Estructura
-La estructura que se utilizara para la codificación para EMICOFI (1.0) sirve para evitar redundancias en el estilo de programación individual y crear un estilo general para facilitar el mantenimiento a largo plazo. Es necesario que se siga este documento estrictamente.
+La estructura que se utilizara para la codificación para EMICOFI (1.0) sirve para evitar redundancias en el estilo de programación individual y crear un estilo general para facilitar el mantenimiento a largo plazo. Es necesario que se lea toda la pagina.
 
 #### Estilo de escritura
 Se utilizará el método Camello (CamelCase) para los nombres de las variables y métodos. 
 CamelCase es un estilo de escritura que se aplica a frases o palabras compuestas. 
 El nombre se debe a que las mayúsculas a lo largo de una palabra en CamelCase se asemejan a las jorobas de un camello. 
 El nombre CamelCase se podría traducir como Mayúsculas/Minúsculas Camello. 
-El término case se traduce como "caja tipográfica", que a su vez implica si una letra es mayúscula o minúscula y tiene su origen en la disposición de los tipos móviles en casilleros o cajas. 
+ 
 Existen dos tipos de CamelCase: 
-•	UpperCamelCase, cuando la primera letra de cada una de las palabras es mayúscula. Ejemplo: EjemploDeUpperCamelCase. 
-•	lowerCamelCase, igual que la anterior con la excepción de que la primera letra es minúscula. Ejemplo: ejemploDeLowerCamelCase. 
-En los nombres se deberán omitir las preposiciones: 
+•	UpperCamelCase, cuando la primera letra de cada una de las palabras es mayúscula. Ejemplo: *EjemploDeUpperCamelCase*. 
+•	lowerCamelCase, igual que la anterior con la excepción de que la primera letra es minúscula. Ejemplo: *ejemploDeLowerCamelCase*. 
+En los nombres se deberán omitir las preposiciones: *a, antes de, dentro de, desde, desde hace, despues de, durante, en, hasta, etc.* 
 
 #### Carpetas
 En el caso de las Carpetas deben de usar el tipo de notación lowerCamelCase, es decir, la primera letra de la carpeta debe de iniciar con minúscula.
@@ -48,7 +48,7 @@ Ejemplo:
 
 ![Imagen de como se deben nombrar las funciones](/imagenes/ReglasCodificacion/funciones.png)
 
-#### Constantes y Variables
+### Constantes y Variables
 ##### Relacionadas al DOM
 Para las constantes o variables se utilizaran diferentes formatos según sea el uso que se le dará, para las variables que se le asignan elementos del DOM deberán empezar con el símbolo de “$”
 Ejemplo:

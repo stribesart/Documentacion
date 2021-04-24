@@ -10,7 +10,7 @@ Dentro de la carpeta **funciones** se almacenaran archivos .js que contengan fun
 
 Dentro de la carpeta **aplicacion** en la raíz de dicha carpeta se encontrarán todas las funciones relacionadas con la aplicación, también se debe crear una carpeta por cada módulo que se cree y cada uno tendrá de raíz dos archivos llamados **módulo.js** y **filtrosModulo.js**.
 
-Dentro de nuestra carpeta **publico** deben de ir todos nuestros archivos que, valga la redundancia, se consumirán en el proyecto, ejemplo de estos son: imágenes, CSS, servicios de SMTP, etc.
+Dentro de nuestra carpeta **publico** deben de ir todos nuestros archivos que se consumirán en el proyecto, ejemplo de estos son: imágenes, CSS, servicios de SMTP, etc.
 
 Dentro de la carpeta **php** se debe crear una estructura similar a la de **aplicación** ya que se deben crear en la raíz una carpeta por cada modulo que va a consumir dichos archivos.
 
