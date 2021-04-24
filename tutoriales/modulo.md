@@ -2,7 +2,7 @@ Bienvenido, en este tutorial crearemos un modulo dentro de nuestra pagina princi
 <br>
 Se solicita crear un apartado para la parte de administracion de los Uniformes en la pagina principal de Prada MX, asi es como luce nuestra pagina actual: <br>
 
-![Vista General de nuestra pagina de PradaMx](/imagenes/paginaPrada.png)
+![Vista General de nuestra pagina de PradaMx](https://github.com/stribesart/Documentacion/blob/main/imagenes/paginaPrada.png?raw=true)
 
 Para este apartado se necesita crear un boton en el Menu anterior para poder dirigirnos al modulo de Uniformes, al cual le llamaremos **Uniformes**. Para esto debemos de seguir una serie de pasos que estaran descritas a continuacion.<br>
 
@@ -101,13 +101,13 @@ Quedando de a siguiente manera:<br>
 ```
 Nuestra pagina quedaria de la siguiente manera:
 
-![Vista General de nuestra pagina de PradaMx con Boton de Uniformes](/imagenes/paginaPradaUniformes.png)
+![Vista General de nuestra pagina de PradaMx con Boton de Uniformes](https://github.com/stribesart/Documentacion/blob/main/imagenes/paginaPradaUniformes.png?raw=true)
 
 ##### Paso 2: Construir los elementos de Uniformes
 Una vez creado el nuevo boton se tendra que crear una carpeta dentro de la carpeta **publico** dentro de la carpeta **js** nombrada de la misma manera que el boton, en este caso crearemos nuestra carpeta **Uniformes**. <br>
 Una vez creada la carpeta podemos comenzar el desarrollo de nuestra pagina.<br>
 Crearemos un nuevo documento llamandolo **Uniformes.js** y un archivo llamado **FiltrosUniformes.js**.<br>
-![Vista de nuestros archivos creados en Uniformes](/imagenes/archivosCreadosEnUniformes.png)
+![Vista de nuestros archivos creados en Uniformes](https://github.com/stribesart/Documentacion/blob/main/imagenes/archivosCreadosEnUniformes.png?raw=true)
 Al inicio de nuestro archivo **Uniformes.js** crearemos la funcion que nos exportara nuestra pagina ya construida, de la siguiente manera:<br>
 ```javascript
 export default async function Uniformes() {}
@@ -130,7 +130,7 @@ export default async function Uniformes() {
 ```
 Hasta ahora lo que hemos creado es una referencia a nuestro contenido de nuestra pagina web y creado el boton que nos dara un espacio para nuestro modulo. Nuestra pagina queda de la siguiente manera:<br>
 
-![Imagen de la pagina creada con su referencia al contenido](/imagenes/referenciaContenido.png)
+![Imagen de la pagina creada con su referencia al contenido](https://github.com/stribesart/Documentacion/blob/main/imagenes/referenciaContenido.png?raw=true)
 
 Ahora ya tenemos un modulo creado con sus referencias a su contenido y sus filtros dentro de nuestra pagina. Ahora comenzaremos con los filtros, los cuales manejaran ciertos eventos que nos mostraran informacion limitada de acuerdo a los que sean seleccionados.<br>
 
@@ -143,7 +143,7 @@ export async function FiltrosUniformes(cbChange) {}
 En esta funcion tenemos que construir cada elemento con el que interactuara nuestro modulo de Uniformes, para esto hay que definir que tipo de filtros tenemos que crear y cual sera la funcionalidad.<br>
 Se sabe que nuestro apartado de uniformes debera contener una estructura como la siguiente pantalla: 
 
-![Imagen de prada Productivo Modulo Uniformes](/imagenes/pantallaPradaProductivoUniformes.png)
+![Imagen de prada Productivo Modulo Uniformes](https://github.com/stribesart/Documentacion/blob/main/imagenes/pantallaPradaProductivoUniformes.png?raw=true)
 
 Entonces comencemos<br><br>
 Necesitaremos 4 botones ya que el boton de regresar ya no es necesario en esta pagina, vemos que la tabla que se muestra en el contenido podra filtrarse por sucursal por lo tanto crearemos una lista que nos permita filtrar por dicho parametro. Una vez analizado lo que se nos pide procederemos a la insercion de nuestros **Filtros**.
@@ -176,7 +176,7 @@ export async function FiltrosUniformes(cbChange) {
 ```
 Como podemos ver se crea una variable la cual [crea un elemento en el DOM](https://stribesart.github.io/Documentacion/global.html#GeneraElementoDOM) (un div), ademas se crea una variable que almacenara un valor del session storage (vease [ObtieneVariableSession](https://stribesart.github.io/Documentacion/global.html#ObtieneVariableSession)), la cual condicionamos a si es 3 que obtenga cierto valor y si no es 3 que lo mande como vacio, creamos una variable que obtenga la parte de los filtros de nuestro modulo Uniformes (vease [ObtieneElementoDOM](https://stribesart.github.io/Documentacion/global.html#ObtieneElementoDom)). Posteriormente cada vez que se entre a uniformes se tendra que limpiar la seccion de los filtros y lo hacemos con un null, despues a nuestro elemento div le añadimos nuestra lista llamando a nuestra funcion Select con sus respectivos parametros (vease **[Select](https://stribesart.github.io/Documentacion/global.html#Select)**), y listo tendremos creada nuestro primer filtro y nuestra pagina se vera de la siguiente manera:
 
-![Imagen de Uniformes con el primer Filtro](/imagenes/UniformesPrimerFiltro.png)
+![Imagen de Uniformes con el primer Filtro](https://github.com/stribesart/Documentacion/blob/main/imagenes/UniformesPrimerFiltro.png?raw=true)
 
 Como podemos ver nuestra lista ya fue creada e incluso ya fue llenada. Procederemos con los botones que necesitamos crear y para esto continuaremos editando nuestro archivo.<br>
 ###### Botones
@@ -206,6 +206,6 @@ export async function FiltrosUniformes(cbChange) {
 ```
 Nuestra pagina se vera de la siguiente manera:<br>
 
-![Imagen de Uniformes con todos los Filtros](/imagenes/filtrosCompletos.png)
+![Imagen de Uniformes con todos los Filtros](https://github.com/stribesart/Documentacion/blob/main/imagenes/filtrosCompletos.png?raw=true)
 
 Hasta este punto hemos creado nuestros elementos en el HTML de la parte de nuestros filtros, nos faltaran nuestros eventos pero eso dependera del modulo, lo veremos a continuacion.<br>
