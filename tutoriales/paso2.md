@@ -53,4 +53,4 @@ Nuestro archivo HTML de login quedaria de la siguiente manera:
 
 Ahora para los estilos de este login utilizamos la paqueteria de css y bootstrap 5. [Aqui](http://www.google.com) podras encontrar toda la informacion relacionada con estos dos consumibles.
 
-**[Siguiente.](http://127.0.0.1:5500/docs/tutorial-paso3.html)**
+**[Siguiente.](https://stribesart.github.io/Documentacion/tutorial-paso3.html)**

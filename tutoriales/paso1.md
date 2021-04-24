@@ -12,4 +12,4 @@ Dentro del documento index sabemos que hay que poner el Titulo del sitio web o e
 
 ![Imagen que nos define la agrupacion de contenido](/imagenes/OrganizacionArchivos/indexHTML.jpeg)
 
-**[Siguiente.](http://127.0.0.1:5500/docs/tutorial-paso2.html)**
+**[Siguiente.](https://stribesart.github.io/Documentacion/tutorial-paso2.html)**

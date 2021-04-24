@@ -44,4 +44,4 @@ Nuestro archivo **index.html** se veria de la siguiente manera:
 ```
 Como vemos solo hemos creado la estructura de nuestra barra de navegacion, este es el formato que se debe llevar para poder crearla, posteriormente se va a llenar de elementos y eventos que seran necesarios segun se requieran, ademas de que necesitamos insertarle elementos a nuestra barra de navegacion (vease [Crear un Modulo]()).
 
-**[Siguiente.](http://127.0.0.1:5500/docs/tutorial-moduloGeneral.html)**
+**[Siguiente.](https://stribesart.github.io/Documentacion/tutorial-moduloGeneral.html)**

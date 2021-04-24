@@ -149,7 +149,7 @@ Entonces comencemos<br><br>
 Necesitaremos 4 botones ya que el boton de regresar ya no es necesario en esta pagina, vemos que la tabla que se muestra en el contenido podra filtrarse por sucursal por lo tanto crearemos una lista que nos permita filtrar por dicho parametro. Una vez analizado lo que se nos pide procederemos a la insercion de nuestros **Filtros**.
 ##### Filtros 3.1
 Para la creacion de nuestros filtros como ya sabemos tenemos nuestro archivo **FiltrosUniformes.js** que creamos junto con **Uniformes.js**.<br>
-Crearemos una funcion llamada **FiltrosUniformes()** y la exportaremos como default para cargarla y utilizarla en **Uniformes.js**, ya que llenaremos nuestra lista dinamicamente la tendremos que hacer asincrona (vease **[Select](http://127.0.0.1:5500/docs/global.html#Select)**), ademas le pasaremos un parametro que se tendra que ejecutar cuando le añadamos evento change. Nuestro codigo deberia verse de la siguiente manera:
+Crearemos una funcion llamada **FiltrosUniformes()** y la exportaremos como default para cargarla y utilizarla en **Uniformes.js**, ya que llenaremos nuestra lista dinamicamente la tendremos que hacer asincrona (vease **[Select](https://stribesart.github.io/Documentacion/global.html#Select)**), ademas le pasaremos un parametro que se tendra que ejecutar cuando le añadamos evento change. Nuestro codigo deberia verse de la siguiente manera:
 ```javascript
 export async function FiltrosUniformes(cbChange) {}
 ```
@@ -174,13 +174,13 @@ export async function FiltrosUniformes(cbChange) {
   );
 }
 ```
-Como podemos ver se crea una variable la cual [crea un elemento en el DOM](http://127.0.0.1:5500/docs/global.html#GeneraElementoDOM) (un div), ademas se crea una variable que almacenara un valor del session storage (vease [ObtieneVariableSession](http://127.0.0.1:5500/docs/global.html#ObtieneVariableSession)), la cual condicionamos a si es 3 que obtenga cierto valor y si no es 3 que lo mande como vacio, creamos una variable que obtenga la parte de los filtros de nuestro modulo Uniformes (vease [ObtieneElementoDOM](http://127.0.0.1:5500/docs/global.html#ObtieneElementoDom)). Posteriormente cada vez que se entre a uniformes se tendra que limpiar la seccion de los filtros y lo hacemos con un null, despues a nuestro elemento div le añadimos nuestra lista llamando a nuestra funcion Select con sus respectivos parametros (vease **[Select](http://127.0.0.1:5500/docs/global.html#Select)**), y listo tendremos creada nuestro primer filtro y nuestra pagina se vera de la siguiente manera:
+Como podemos ver se crea una variable la cual [crea un elemento en el DOM](https://stribesart.github.io/Documentacion/global.html#GeneraElementoDOM) (un div), ademas se crea una variable que almacenara un valor del session storage (vease [ObtieneVariableSession](https://stribesart.github.io/Documentacion/global.html#ObtieneVariableSession)), la cual condicionamos a si es 3 que obtenga cierto valor y si no es 3 que lo mande como vacio, creamos una variable que obtenga la parte de los filtros de nuestro modulo Uniformes (vease [ObtieneElementoDOM](https://stribesart.github.io/Documentacion/global.html#ObtieneElementoDom)). Posteriormente cada vez que se entre a uniformes se tendra que limpiar la seccion de los filtros y lo hacemos con un null, despues a nuestro elemento div le añadimos nuestra lista llamando a nuestra funcion Select con sus respectivos parametros (vease **[Select](https://stribesart.github.io/Documentacion/global.html#Select)**), y listo tendremos creada nuestro primer filtro y nuestra pagina se vera de la siguiente manera:
 
 ![Imagen de Uniformes con el primer Filtro](/imagenes/UniformesPrimerFiltro.png)
 
 Como podemos ver nuestra lista ya fue creada e incluso ya fue llenada. Procederemos con los botones que necesitamos crear y para esto continuaremos editando nuestro archivo.<br>
 ###### Botones
-Para crear nuestros botones tenemos un componente que ya nos crea nuestros Botones (vease [Button](http://127.0.0.1:5500/docs/global.html#Button)), este componente lo llamaremos 4 veces ya que necesitamos 4 botones diferentes, nuestro codigo quedaria de la siguiente manera:<br>
+Para crear nuestros botones tenemos un componente que ya nos crea nuestros Botones (vease [Button](https://stribesart.github.io/Documentacion/global.html#Button)), este componente lo llamaremos 4 veces ya que necesitamos 4 botones diferentes, nuestro codigo quedaria de la siguiente manera:<br>
 
 ```javascript
 export async function FiltrosUniformes(cbChange) {

@@ -15,4 +15,4 @@ Dentro de nuestra carpeta **publico** deben de ir todos nuestros archivos que se
 Dentro de la carpeta **php** se debe crear una estructura similar a la de **aplicación** ya que se deben crear en la raíz una carpeta por cada modulo que va a consumir dichos archivos.
 
 
-![OrgProyecto](https://github.com/stribesart/Documentacion/blob/main/imagenes/OrganizacionArchivos/index.jpeg)
+![OrgProyecto](/imagenes/OrganizacionArchivos/index.jpeg)
