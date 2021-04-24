@@ -33,30 +33,30 @@ En los nombres se deberán omitir las preposiciones: *a, antes de, dentro de, de
 En el caso de las Carpetas deben de usar el tipo de notación lowerCamelCase, es decir, la primera letra de la carpeta debe de iniciar con minúscula.
 Ejemplo:
 
-![Imagen de como se deben nombrar las carpertas](/imagenes/ReglasCodificacion/carpetas.png)
+![Imagen de como se deben nombrar las carpertas](https://github.com/stribesart/Documentacion/blob/main/imagenes/ReglasCodificacion/carpetas.png?raw=true)
 
 #### Archivos
 En el caso de los Archivos deben de usar el tipo de notación UpperCamelCase, es decir, la primera letra del nombre del archivo tendrá que ser mayúscula.
 Ejemplo:
 
-![Imagen de como se deben nombrar los archivos](/imagenes/ReglasCodificacion/archivos.png)
+![Imagen de como se deben nombrar los archivos](https://github.com/stribesart/Documentacion/blob/main/imagenes/ReglasCodificacion/archivos.png?raw=true)
 
 #### Funciones
 En caso de las funciones deberán ser llamadas igual que el archivo en cuestión. Para las funciones se utilizará la estructura CamelCase y sus parámetros serán llamados por una A mayúscula.
 Se deberá respetar tanto para envío de parámetros como de recepción de los mismos.
 Ejemplo: 
 
-![Imagen de como se deben nombrar las funciones](/imagenes/ReglasCodificacion/funciones.png)
+![Imagen de como se deben nombrar las funciones](https://github.com/stribesart/Documentacion/blob/main/imagenes/ReglasCodificacion/funciones.png?raw=true)
 
 ### Constantes y Variables
 ##### Relacionadas al DOM
 Para las constantes o variables se utilizaran diferentes formatos según sea el uso que se le dará, para las variables que se le asignan elementos del DOM deberán empezar con el símbolo de “$”
 Ejemplo:
 
-![Imagen de como se deben nombrar las constantes o variables](/imagenes/ReglasCodificacion/vcDOM.png)
+![Imagen de como se deben nombrar las constantes o variables](https://github.com/stribesart/Documentacion/blob/main/imagenes/ReglasCodificacion/vcDOM.png?raw=true)
 
 ##### No relacionadas al DOM
 Para las variables o constantes que no tienen que ver con los elementos DOM utilizaran la misma notación lowerCamelCase.
 Ejemplo:
 
-![Imagen de como se deben nombrar las constantes o variables](/imagenes/ReglasCodificacion/vcNoDOM.png)
+![Imagen de como se deben nombrar las constantes o variables](https://github.com/stribesart/Documentacion/blob/main/imagenes/ReglasCodificacion/vcNoDOM.png?raw=true)
