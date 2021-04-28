@@ -16,19 +16,23 @@ Button("Solicitar","Solicitar","btn-secondary","modulo-uniformes","SolicitarUnif
 De esta manera ya pudimos crear un boton dentro de nuestro codigo, este componente puede llamarse en cualquier archivo, simplemente hay que verificar bien la ruta de donde lo vamos a llamar.
 
 ###### Paso 2
-En la carpeta publico se debe crear una carpeta con el mismo nombre con el que se llama al modulo anterior. Dentro de la carpeta se creara el documento principal de la pagina/modulo a cargar
+En la carpeta **publico** se debe crear una carpeta con el mismo nombre con el que se llama al modulo anterior. Dentro de la carpeta se creara el documento principal de la pagina/modulo a cargar.
 
 ###### Paso 3
-Las funciones que se usaran se deberan llamar igual a los nombres de los archivos
+Conforme se va armando nuesro modulo debemos crear funciones, cada funcion debe pertenecer a un archivo, este archivo se debe de llamar igual que la funcion.
+
+Si nuestra funcion se llama *Funcion* el archivo se llamara *Funcion.js* y en la parte superior del archivo se importaran todas las funciones que utilice est funcion.
+```javascript
+import {} from ""
+Funcion(){}
+```
 
 ###### Paso 4
 Creando Funcion de Filtros
-Se creara un fragmento con la funcion ya existente CrearFragmento, esto sirve para ir almacenando o filtros y posterior se inserte en el DOM
+Se creara un fragmento con la funcion ya existente [CrearFragmento](https://stribesart.github.io/Documentacion/global.html#CrearFragmento), esto sirve para ir almacenando o filtros y posterior se inserte en el DOM.
 
 ###### Paso 5
-Para pasar parametros de la session de la pagina, se utiliza la funcion ObtieneVariableSession(){}
-
-en filtros se manda una palabra reservda cbChange
+Para pasar parametros de la session de la pagina, se utiliza la funcion [ObtieneVariableSession](https://stribesart.github.io/Documentacion/global.html#ObtieneVariableSession).
 
 ###### Paso 6
 Se realiza el cambios de un fragmento a un div ya que el evento cbChange no se ejecuta en el fragmento ya que el fragmento no se inserta en el dom por lo tanto no detecta el evento.
