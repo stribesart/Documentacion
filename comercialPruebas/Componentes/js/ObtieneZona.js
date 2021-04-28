@@ -1,3 +1,8 @@
+/**
+ * Esta funcion se encarga de verificar que valor de la zona se identiica segun la semana que esta corriendo actualmente.
+ * @param {int} semana - Parametro qe recibe el numero de semana que esta corriendo en el dia actual
+ * @returns Json
+ */
 export const ObtieneZona = async(semana) => {
     const $aniosList = document.getElementById('lista-años'),
         $semanasList = document.getElementById('lista-semanas');

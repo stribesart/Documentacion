@@ -18,6 +18,9 @@ llenaAnios(2020, aniosList);
 checkSucursal.disabled = true;
 filtroSucursal.style.display = 'none';
 
+/**
+ * Funcion que valida los eventos que se realizan dentro de las listas que se van cambiando en los filtros.
+ */
 (async() => {
     const SemanasParams = {
         anio: aniosList.value

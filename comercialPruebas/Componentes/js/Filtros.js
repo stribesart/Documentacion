@@ -7,6 +7,13 @@ import { ObtieneSemanaActual } from "./ObtieneSemanaActual.js";
 import { ObtieneUrl } from "./ObtieneUrl.js";
 import { ObtieneVariableSession } from "./ObtieneVariableSession.js";
 
+/**
+ * Esta funcion crea los filtros de los modulos de Orkestra, Ponderado y Resumen Indicadores
+ * @param {int} AModulo - Parametro que recibe el identificador del modulo que se va a crear
+ * @param {object} CbChange - Parametro que verifica que evento sucedio en que checkbox
+ * @example
+ * await Filtros(2, CargarDatos);
+ */
 export async function Filtros(AModulo,CbChange){
  
 
