@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Tutorial: Crear un Modulo en General - Documentation</title>
+    <title>Componentes/funciones/llenaLista.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,39 +32,68 @@
 
 <div id="main">
     
-    <h1 class="page-title">Tutorial: Crear un Modulo en General</h1>
+    <h1 class="page-title">Componentes/funciones/llenaLista.js</h1>
     
 
+    
+
+
+
+    
     <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { ajax_post } from "./ajax_post.js";
 
-<header>
-    
+/**
+ * Funcion que se encarga de llenar las listas del DOM con elementos de la Base de datos.
+ * @param {DOMString} ALista - Parametro que identifica la lista a la que se van a insertar los datos
+ * @param {object} options - Parametro que valida que irl y que parametros va a consumir el web service
+ * @returns DOMString
+ */
+export async function llenaLista(ALista, options){
+    const {url, params} = options;
+    let iteraciones = 2;    
+    if(params.atributos != undefined){
+        iteraciones = 3;
+    }
 
-    <h2>Crear un Modulo en General</h2>
-</header>
+    const data = new FormData();
 
-<article>
-    <p>Cuales son los pasos para crear un Modulo en general:</p>
-<p>Bienvenido, en este tutorial revisaremos los pasos generales para crear un modulo en general.</p>
-<p>Comencemos.</p>
-<h6>Paso 1</h6>
-<p>Al crear el boton en la pagina principal se debera crear un boton con un atributo modulo que referencie al modulo correcto o en cuestion (Uniformes)</p>
-<h6>Paso 2</h6>
-<p>En la carpeta publico se debe crear una carpeta con el mismo nombre con el que se llama al modulo anterior (Uniformes)
-Dentro de la carpeta se creara el documento principal de la pagina/modulo a cargar</p>
-<h6>Paso 3</h6>
-<p>Las funciones que se usaran se deberan llamar igual a los nombres de los archivos (FiltrosUniformes || FiltrosUniformes(){})</p>
-<h6>Paso 4</h6>
-<p>Creando Funcion de Filtros
-Se creara un fragmento con la funcion ya existente CrearFragmento, esto sirve para ir almacenando o filtros y posterior se inserte en el DOM</p>
-<h6>Paso 5</h6>
-<p>Para pasar parametros de la session de la pagina, se utiliza la funcion ObtieneVariableSession(){}</p>
-<p>en filtros se manda una palabra reservda cbChange</p>
-<h6>Paso 6</h6>
-<p>Se realiza el cambios de un fragmento a un div ya que el evento cbChange no se ejecuta en el fragmento ya que el fragmento no se inserta en el dom por lo tanto no detecta el evento.</p>
-</article>
+    for(let i = 0; i &lt; Object.keys(params).length - iteraciones; i++){
+        data.append(Object.keys(params)[i], params[Object.keys(params)[i]]);
+    }
+    ALista.innerHTML = null;
+    await ajax_post({
+        url : url,
+        params: data,
+        cbSuccess: (json) => {
+            json.forEach(opt => {
+                const $option = document.createElement('option');
+                if(opt[params.campoValue] === undefined){
+                    $option.innerHTML = opt.texto;
+                }else{
+                    $option.value = opt[params.campoValue];
+                    $option.innerText = opt[params.campoDescripcion];
+                    if(params.atributos != undefined){
+                        const atributos = params.atributos.split(',');
+                        for(let j = 0; j &lt;(atributos.length); j++){
+                            $option.setAttribute(`data-${atributos[j]}`, opt[atributos[j]]);
+                        }
+                    }
+                }
 
-</section>
+                ALista.appendChild($option);
+            });
+        }
+    });
+
+    return ALista;
+}</code></pre>
+        </article>
+    </section>
+
+
+
 
     
     

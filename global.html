@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Inicio</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-organizacion.html">Organizacion de Archivos</a></li><li><a href="tutorial-reglas.html">Reglas de Codificacion</a></li><li><a href="tutorial-tutorial.html">Desarrollo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ajax_post">ajax_post</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CargarDatos">CargarDatos</a></li><li><a href="global.html#CrearFragmento">CrearFragmento</a></li><li><a href="global.html#Filtros">Filtros</a></li><li><a href="global.html#FormularioLogin">FormularioLogin</a></li><li><a href="global.html#GeneraElementoDOM">GeneraElementoDOM</a></li><li><a href="global.html#Input">Input</a></li><li><a href="global.html#LimpiarContenido">LimpiarContenido</a></li><li><a href="global.html#LimpiarElemento">LimpiarElemento</a></li><li><a href="global.html#MenuNavegacion">MenuNavegacion</a></li><li><a href="global.html#ObtieneElementoDom">ObtieneElementoDom</a></li><li><a href="global.html#ObtieneSemanaActual">ObtieneSemanaActual</a></li><li><a href="global.html#ObtieneTipoUsuario">ObtieneTipoUsuario</a></li><li><a href="global.html#ObtieneUrl">ObtieneUrl</a></li><li><a href="global.html#ObtieneVariableSession">ObtieneVariableSession</a></li><li><a href="global.html#ObtieneZona">ObtieneZona</a></li><li><a href="global.html#Select">Select</a></li><li><a href="global.html#TablaOpcionMenu">TablaOpcionMenu</a></li><li><a href="global.html#TablaUniformes">TablaUniformes</a></li><li><a href="global.html#Table">Table</a></li><li><a href="global.html#Tarjeta">Tarjeta</a></li></ul>
+    <h2><a href="index.html">Inicio</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-organizacion.html">Organizacion de Archivos</a></li><li><a href="tutorial-reglas.html">Reglas de Codificacion</a></li><li><a href="tutorial-tutorial.html">Desarrollo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ajax_post">ajax_post</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CargarDatos">CargarDatos</a></li><li><a href="global.html#CargaSucursales">CargaSucursales</a></li><li><a href="global.html#CrearFragmento">CrearFragmento</a></li><li><a href="global.html#Filtros">Filtros</a></li><li><a href="global.html#FormularioLogin">FormularioLogin</a></li><li><a href="global.html#GeneraElementoDOM">GeneraElementoDOM</a></li><li><a href="global.html#Input">Input</a></li><li><a href="global.html#LimpiarContenido">LimpiarContenido</a></li><li><a href="global.html#LimpiarElemento">LimpiarElemento</a></li><li><a href="global.html#llenaLista">llenaLista</a></li><li><a href="global.html#MenuNavegacion">MenuNavegacion</a></li><li><a href="global.html#ObtieneElementoDom">ObtieneElementoDom</a></li><li><a href="global.html#ObtieneSemanaActual">ObtieneSemanaActual</a></li><li><a href="global.html#ObtieneTipoUsuario">ObtieneTipoUsuario</a></li><li><a href="global.html#ObtieneUrl">ObtieneUrl</a></li><li><a href="global.html#ObtieneVariableSession">ObtieneVariableSession</a></li><li><a href="global.html#ObtieneZona">ObtieneZona</a></li><li><a href="global.html#Select">Select</a></li><li><a href="global.html#TablaOpcionMenu">TablaOpcionMenu</a></li><li><a href="global.html#TablaUniformes">TablaUniformes</a></li><li><a href="global.html#Table">Table</a></li><li><a href="global.html#Tarjeta">Tarjeta</a></li><li><a href="global.html#toggle">toggle</a></li></ul>
 </nav>
 
 <div id="main">
@@ -1136,6 +1136,188 @@
 
     
 
+    <h4 class="name" id="CargaSucursales"><span class="type-signature"></span>CargaSucursales<span class="signature">($sucursalesList, $zonasList, AModulo)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Componentes_funciones_CargaSucursales.js.html">Componentes/funciones/CargaSucursales.js</a>, <a href="Componentes_funciones_CargaSucursales.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Esta funcion lo que hace es cargar los datos de las listas de sucursales y de zonas
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>$sucursalesList</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">DOMString</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que identifica a que elemento del DOM se insertaran datos</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>$zonasList</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">DOMString</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que identifica a que elemento del DOM se insertaran datos</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>AModulo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro equis que no se usa, nlo tuvieron que haber quitado mis chavos xD</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="CrearFragmento"><span class="type-signature"></span>CrearFragmento<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
@@ -1647,6 +1829,175 @@
             
 
             <td class="description last">Parametro que define si se le va a insertar un checkbox</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    DOMString
+</div>
+
+
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="llenaLista"><span class="type-signature"></span>llenaLista<span class="signature">(ALista, options)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Componentes_funciones_llenaLista.js.html">Componentes/funciones/llenaLista.js</a>, <a href="Componentes_funciones_llenaLista.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Funcion que se encarga de llenar las listas del DOM con elementos de la Base de datos.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ALista</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">DOMString</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que identifica la lista a la que se van a insertar los datos</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que valida que irl y que parametros va a consumir el web service</td>
         </tr>
 
     
@@ -3196,6 +3547,142 @@
 
 
         
+            
+
+    
+
+    <h4 class="name" id="toggle"><span class="type-signature"></span>toggle<span class="signature">(elemento)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Componentes_funciones_toggle.js.html">Componentes/funciones/toggle.js</a>, <a href="Componentes_funciones_toggle.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Esta funcion se encarga de ocultar un elemento cuando otro sea seleccionado
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>elemento</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">DOMString</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que se encarga de pasar el elemento que se va a ocultar</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -3292,7 +3779,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Wed Apr 28 2021 11:15:57 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Wed Apr 28 2021 11:28:38 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
