@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Componentes/Select.js - Documentation</title>
+    <title>Componentes/Input.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Componentes/Select.js</h1>
+    <h1 class="page-title">Componentes/Input.js</h1>
     
 
     
@@ -42,73 +42,45 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { llenaLista } from "../funciones/llenaLista.js";
-
-/**
- * Funcion que crea una lista dentro de nuestro DOM consumiendo una api desde {@link ajax_post}.
- * @param {object} AOpciones - Objeto que contiene datos para consumir un api.
- * @param {number} ACheck - Parametro que nos dice si traera un checkbox o no.
- * @returns {objeto}
+            <pre class="prettyprint source linenums"><code>/**
+ * Esta es una funcion que crea un elemento en el DOM de tipo Input
+ * @param {string} ANombreLabel - Parametro que define el texto que ira en el input
+ * @param {string} AType - Parametro que define el tipo de input que se va a realizar
+ * @param {string} AId - Parametro que define el identificador del elemento a insertar en el dom
+ * @param {string} AName - Parametro que define el nombre del elemento del dom
+ * @param {string} AValue - Parametro que define si se debe de insertar un valor al elemento, es opcional
+ * @param {int} ADisabled - Parametro que define si el elemento va a ir habilitado o deshabilitado
+ * @param {int} AChecked - Parametro que define si se le va a insertar un checkbox
+ * @returns DOMString
+ * @example
+ * Input(nombreLabel1, "radio", `radio-${nombreLabel1}`, "tipoVenta", "0", 1);
  */
-export async function Select(AOpciones, ACheck = 0) { //Funcion que crea Selects en el Promociones.php
-    let { nombreTabla, url, valor } = AOpciones;
-    let params = AOpciones.params;
-    const $formGroup = document.createElement('div');
+export function Input(ANombreLabel,AType,  AId, AName, AValue = '', ADisabled = 1, AChecked = 1){
+    const $container = document.createElement('div')
     const $label = document.createElement('label');
-    const $labelContainer = document.createElement('div');
-    let $select = document.createElement('select');
+    const $input = document.createElement('input');
 
-    if(Object.keys(params).length === 0){
-    //if (typeof params.campoValue == undefined) {
-        params = {
-            campoValue: `${nombreTabla.toLowerCase().substring(0,3)}01`,
-            campoDescripcion: `${nombreTabla.toLowerCase().substring(0,3)}02`
-        }
+    //$container.className = 'form-group';
+    $label.innerText = ANombreLabel;
+
+    $input.type = AType;
+    $input.id = AId;
+    $input.className = 'form-contol';
+    $input.name = AName;
+    if(ADisabled === 0){
+        $input.disabled = 'disabled';
     }
-    if (ACheck != 0) {
-        const $checkbox = document.createElement('input');
-        $checkbox.type = 'checkbox';
-        $checkbox.id = `cb${nombreTabla}`;
-        $checkbox.name = `cb${nombreTabla}`;
-        $labelContainer.appendChild($checkbox);
-        $select.style.display = 'none';
-
-        $checkbox.addEventListener('change', e => {
-            if ($select.style.display === 'none') {
-                $select.style.display = 'block';
-            } else {
-                $select.style.display = 'none';
-            }
-        });
+    if(AChecked === 0){
+        $input.checked = 'checked';
     }
-
-
-    $formGroup.className = 'form-group';
-    $label.innerText = nombreTabla;
-    $label.id = `lbl${nombreTabla}`;
-    if (nombreTabla === "Año") {
-        $select.id = `idAnio`;
-        $select.name = `idAnio`;
-    } else {
-        $select.id = `id${nombreTabla}`;
-        $select.name = `id${nombreTabla}`;
+    if(AValue != ''){
+        $input.value = AValue;
     }
+    
+    $container.appendChild($input);
+    $container.appendChild($label);
 
-    // console.log($select.name)
-
-    $select = await llenaLista($select, { url: url, params: params });
-
-    if (valor != undefined) {
-        $select.value = valor;
-    }
-
-    $labelContainer.appendChild($label);
-
-    $formGroup.appendChild($labelContainer);
-    $formGroup.appendChild($select);
-
-    return $formGroup;
-
+    return $container;
 }</code></pre>
         </article>
     </section>

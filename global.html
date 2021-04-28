@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Inicio</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-organizacion.html">Organizacion de Archivos</a></li><li><a href="tutorial-reglas.html">Reglas de Codificacion</a></li><li><a href="tutorial-tutorial.html">Desarrollo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ajax_post">ajax_post</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CargarDatos">CargarDatos</a></li><li><a href="global.html#FormularioLogin">FormularioLogin</a></li><li><a href="global.html#GeneraElementoDOM">GeneraElementoDOM</a></li><li><a href="global.html#LimpiarContenido">LimpiarContenido</a></li><li><a href="global.html#LimpiarElemento">LimpiarElemento</a></li><li><a href="global.html#MenuNavegacion">MenuNavegacion</a></li><li><a href="global.html#ObtieneElementoDom">ObtieneElementoDom</a></li><li><a href="global.html#ObtieneVariableSession">ObtieneVariableSession</a></li><li><a href="global.html#Select">Select</a></li><li><a href="global.html#TablaUniformes">TablaUniformes</a></li></ul>
+    <h2><a href="index.html">Inicio</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-organizacion.html">Organizacion de Archivos</a></li><li><a href="tutorial-reglas.html">Reglas de Codificacion</a></li><li><a href="tutorial-tutorial.html">Desarrollo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ajax_post">ajax_post</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CargarDatos">CargarDatos</a></li><li><a href="global.html#FormularioLogin">FormularioLogin</a></li><li><a href="global.html#GeneraElementoDOM">GeneraElementoDOM</a></li><li><a href="global.html#Input">Input</a></li><li><a href="global.html#LimpiarContenido">LimpiarContenido</a></li><li><a href="global.html#LimpiarElemento">LimpiarElemento</a></li><li><a href="global.html#MenuNavegacion">MenuNavegacion</a></li><li><a href="global.html#ObtieneElementoDom">ObtieneElementoDom</a></li><li><a href="global.html#ObtieneVariableSession">ObtieneVariableSession</a></li><li><a href="global.html#Select">Select</a></li><li><a href="global.html#TablaUniformes">TablaUniformes</a></li></ul>
 </nav>
 
 <div id="main">
@@ -947,6 +947,295 @@
 
     
 
+    <h4 class="name" id="Input"><span class="type-signature"></span>Input<span class="signature">(ANombreLabel, AType, AId, AName, AValue, ADisabled, AChecked)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Componentes_Input.js.html">Componentes/Input.js</a>, <a href="Componentes_Input.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Esta es una funcion que crea un elemento en el DOM de tipo Input
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>Input(nombreLabel1, "radio", `radio-${nombreLabel1}`, "tipoVenta", "0", 1);</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ANombreLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define el texto que ira en el input</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>AType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define el tipo de input que se va a realizar</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>AId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define el identificador del elemento a insertar en el dom</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>AName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define el nombre del elemento del dom</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>AValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define si se debe de insertar un valor al elemento, es opcional</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ADisabled</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define si el elemento va a ir habilitado o deshabilitado</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>AChecked</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define si se le va a insertar un checkbox</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    DOMString
+</div>
+
+
+
+    
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="ObtieneElementoDom"><span class="type-signature"></span>ObtieneElementoDom<span class="signature">(AIdElemento, AQuery)</span><span class="type-signature"> &rarr; {<a href="global.html#objeto">objeto</a>}</span></h4>
 
     
@@ -1693,7 +1982,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Sat Apr 24 2021 17:52:43 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Wed Apr 28 2021 10:32:45 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
