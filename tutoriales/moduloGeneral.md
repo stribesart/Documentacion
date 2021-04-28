@@ -7,12 +7,11 @@ Nuestro proyecto se va a manejar por modulos por lo tanto necesitamos saber como
 ###### Paso 1
 Para el paso 1 se necesita crear un boton que es el que nos va a ayudar a construir lo relacionado con ese modulo.
 
-Por lo tanto necesitamos crearlo con el componente [Boton](https://stribesart.github.io/Documentacion/global.html#Button), con este componente podemos llamarlo con el siguiente codigo 
-```javascript
-import { Button } from "./Componentes/Button.js";
-
-Button("Solicitar","Solicitar","btn-secondary","modulo-uniformes","SolicitarUniformes");
+Por lo tanto es necesario crearlo en nuestra estructura HTML con el siguiente codigo:
+```html
+<button type="button" class="btn btn-primary" data-modulo="Modulo">Modulo</button>
 ```
+
 De esta manera ya pudimos crear un boton dentro de nuestro codigo, este componente puede llamarse en cualquier archivo, simplemente hay que verificar bien la ruta de donde lo vamos a llamar.
 
 ###### Paso 2
