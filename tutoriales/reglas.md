@@ -1,32 +1,41 @@
 ### Descripción
-En este manual se define el estándar de programación general para cualquier proyecto que se desarrollara en DCSR, se va a definir como declarar variables, constantes, funciones, clases, etc, al momento de programar. Se dará una breve explicación de que consiste cada elemento y un formato a seguir para cada uno así como una estructura que hay que respetar para la declaración, tanto de funciones, como de clases. Veremos la estructura de archivos que se tendrá que respetar para facilitar la búsqueda de archivos dentro del proyecto.
+En esta seccion se define el estándar de programación general para cualquier proyecto que se desarrollará en *DCSR*, se va a definir como declarar variables, constantes, funciones, clases, etc, al momento de programar. Se dará una breve explicación de que consiste cada elemento y un formato a seguir para cada uno así como una estructura que hay que respetar para la declaración, tanto de funciones, como de clases. Veremos la estructura de archivos que se tendrá que respetar para facilitar la búsqueda de archivos dentro del proyecto.
 
 ### Análisis
 Nuestro estándar de programación necesitara ciertos criterios que se tendrán que cumplir para poder desarrollar las reglas que se proponen a continuación, para esto hay que definir bien lo que tenemos que saber previamente de cumplir las reglas.
+
 Definiremos el(los) lenguaje(s) de programación a utilizar en este caso el lenguaje de programación a trabajar es JavaScript.
+
 Definiremos una estructura de ordenamiento de carpetas y archivos para la facilitación de acceso a archivos acordes al proyecto.
+
 Seccionaremos los archivos de JavaScript de manera que todo este ordenado para la mayor comprensión del código.
+
 Definiremos distintos estilos de escritura para distintos elementos dentro del lenguaje JavaScript que nos permitirán generalizar el estilo de programación de cada uno de los integrantes del equipo.
+
 Definiremos como vamos a trabajar con las excepciones dentro de los distintos métodos que se irán generando a lo largo del desarrollo de la programación.
 
 ### Criterios
 Las reglas de nuestro estándar de programación deben ser:
-•	Fáciles de recordar
-•	Deben ser fáciles de leer y entender rápidamente.
-•	El código debe tener consistencia para que el código sea legible.
+1. Fáciles de recordar
+2. Deben ser fáciles de leer y entender rápidamente.
+3. El código debe tener consistencia para que el código sea legible.
 
 ### Estructura
-La estructura que se utilizara para la codificación para EMICOFI (1.0) sirve para evitar redundancias en el estilo de programación individual y crear un estilo general para facilitar el mantenimiento a largo plazo. Es necesario que se lea toda la pagina.
+La estructura que se utilizara para la codificación de cualquier proyecto sirve para evitar redundancias en el estilo de programación individual y crear un estilo general para facilitar el mantenimiento a largo plazo. Es necesario que se lea toda la página.
 
 #### Estilo de escritura
 Se utilizará el método Camello (CamelCase) para los nombres de las variables y métodos. 
+
 CamelCase es un estilo de escritura que se aplica a frases o palabras compuestas. 
+
 El nombre se debe a que las mayúsculas a lo largo de una palabra en CamelCase se asemejan a las jorobas de un camello. 
+
 El nombre CamelCase se podría traducir como Mayúsculas/Minúsculas Camello. 
  
 Existen dos tipos de CamelCase: 
-•	UpperCamelCase, cuando la primera letra de cada una de las palabras es mayúscula. Ejemplo: *EjemploDeUpperCamelCase*. 
-•	lowerCamelCase, igual que la anterior con la excepción de que la primera letra es minúscula. Ejemplo: *ejemploDeLowerCamelCase*. 
+1. **UpperCamelCase**, cuando la primera letra de cada una de las palabras es mayúscula. Ejemplo: *EjemploDeUpperCamelCase*. 
+2. **lowerCamelCase**, igual que la anterior con la excepción de que la primera letra es minúscula. Ejemplo: *ejemploDeLowerCamelCase*. 
+
 En los nombres se deberán omitir las preposiciones: *a, antes de, dentro de, desde, desde hace, despues de, durante, en, hasta, etc.* 
 
 #### Carpetas
