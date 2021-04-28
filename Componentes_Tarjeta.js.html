@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>index.js - Documentation</title>
+    <title>Componentes/Tarjeta.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">index.js</h1>
+    <h1 class="page-title">Componentes/Tarjeta.js</h1>
     
 
     
@@ -42,44 +42,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
-// (async function (){
-// })();
-
-import { limpiarContenido } from "./publico/js/limpiarContenido.js";
-import { ObtieneElementoDom } from "./publico/js/obtieneElementoDom.js";
+            <pre class="prettyprint source linenums"><code>import { GeneraElementoDom } from "../publico/js/GeneraElementoDom.js";
 
 /**
- * Se crea una variable llamada menu, esta varible nos sirve de apoyo para agregar el evento para cada
- * modulo que se ira creando. En este archivo se agrega el evento al menu para poder cargar contenido
- * diferente por elemento del menu.
- * @name MenuNavegacion
+ * Esta funcion crea una tarjeta con Bootstrap 5 para la creacion del modulo de MasVendidos
+ * @param {string} json - Parametro que define un objeto JSON
+ * @returns DOMString
  */
-const $menu = document.getElementById("menu-principal");
+export function Tarjeta(json) {
+    const contenido = GeneraElementoDom("div");
+    contenido.classList.add("card");
+    contenido.id = json.cod01;
+    contenido.innerHTML = `
+    &lt;img src="${json.imagen}" class="card-img-top" width="150" height="140">
+    &lt;div class="card-body">
+      &lt;h5 class="card-title">${json.cod10}&lt;/h5>
+      &lt;p class="card-text">Color: ${json.col02}&lt;/p>
+      &lt;p class="card-text">Departamento: ${json.dep02}&lt;/p>
+      &lt;p class="card-text">Familia: ${json.fam02}&lt;/p>
+      &lt;p class="card-text">Unidades: ${json.unidades}&lt;/p>
+      &lt;p class="card-text">Precio: ${json.dti08}&lt;/p>
+      &lt;p class="card-text">Ventas: ${json.venta}&lt;/p>
+      &lt;div class="d-grid gap-2">
+        &lt;button type="button" class="btn btn-outline-secondary btn-sm" id="tallas" data-selected=${json.cod01}>Tallas&lt;/button>
+        &lt;button type="button" class="btn btn-outline-secondary btn-sm" id="tiendas" data-selected=${json.cod01}>Tiendas&lt;/button>
+        &lt;button type="button" class="btn btn-outline-secondary btn-sm" id="tickets" data-selected=${json.cod01}>Tickets&lt;/button>
+      &lt;/div>
+    &lt;/div>`
 
-$menu.addEventListener("click", async (e)=>{
- if(e.target.getAttribute("data-modulo") != null){
-  const $contenido = ObtieneElementoDom("contenido");
-  const $filtros = ObtieneElementoDom("filtros");
-  const $filtrosUniformes = ObtieneElementoDom("filtros-uniformes");
-  const nombreComponente = e.target.getAttribute("data-modulo");
-  const rutaComponente = `${nombreComponente}/${nombreComponente}.js`;
-  const modales = ObtieneElementoDom("modal", true);
-  if(modales != null){
-   for(let modal of modales){
-    modal.parentNode.removeChild(modal);
-   }
-  }
-
-  limpiarContenido();
-  e.target.disabled = true;
-  const modulo = await import(`./publico/js/${rutaComponente}`).then((module) => module);
-  $contenido.appendChild( await modulo.default());
-  e.target.disabled = false;
- }
-});
-
-</code></pre>
+    return contenido;
+}</code></pre>
         </article>
     </section>
 

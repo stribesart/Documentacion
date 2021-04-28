@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Inicio</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-organizacion.html">Organizacion de Archivos</a></li><li><a href="tutorial-reglas.html">Reglas de Codificacion</a></li><li><a href="tutorial-tutorial.html">Desarrollo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ajax_post">ajax_post</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CargarDatos">CargarDatos</a></li><li><a href="global.html#FormularioLogin">FormularioLogin</a></li><li><a href="global.html#GeneraElementoDOM">GeneraElementoDOM</a></li><li><a href="global.html#Input">Input</a></li><li><a href="global.html#LimpiarContenido">LimpiarContenido</a></li><li><a href="global.html#LimpiarElemento">LimpiarElemento</a></li><li><a href="global.html#MenuNavegacion">MenuNavegacion</a></li><li><a href="global.html#ObtieneElementoDom">ObtieneElementoDom</a></li><li><a href="global.html#ObtieneVariableSession">ObtieneVariableSession</a></li><li><a href="global.html#Select">Select</a></li><li><a href="global.html#TablaUniformes">TablaUniformes</a></li></ul>
+    <h2><a href="index.html">Inicio</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-organizacion.html">Organizacion de Archivos</a></li><li><a href="tutorial-reglas.html">Reglas de Codificacion</a></li><li><a href="tutorial-tutorial.html">Desarrollo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ajax_post">ajax_post</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CargarDatos">CargarDatos</a></li><li><a href="global.html#FormularioLogin">FormularioLogin</a></li><li><a href="global.html#GeneraElementoDOM">GeneraElementoDOM</a></li><li><a href="global.html#Input">Input</a></li><li><a href="global.html#LimpiarContenido">LimpiarContenido</a></li><li><a href="global.html#LimpiarElemento">LimpiarElemento</a></li><li><a href="global.html#MenuNavegacion">MenuNavegacion</a></li><li><a href="global.html#ObtieneElementoDom">ObtieneElementoDom</a></li><li><a href="global.html#ObtieneVariableSession">ObtieneVariableSession</a></li><li><a href="global.html#Select">Select</a></li><li><a href="global.html#TablaOpcionMenu">TablaOpcionMenu</a></li><li><a href="global.html#TablaUniformes">TablaUniformes</a></li><li><a href="global.html#Table">Table</a></li><li><a href="global.html#Tarjeta">Tarjeta</a></li></ul>
 </nav>
 
 <div id="main">
@@ -1012,7 +1012,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>Input(nombreLabel1, "radio", `radio-${nombreLabel1}`, "tipoVenta", "0", 1);</code></pre>
+    <pre class="prettyprint"><code>Input("Input", "radio", `radio-${nombreLabel1}`, "tipoVenta", "0", 1);</code></pre>
 
 
 
@@ -1754,6 +1754,290 @@
 
     
 
+    <h4 class="name" id="TablaOpcionMenu"><span class="type-signature"></span>TablaOpcionMenu<span class="signature">(json, id, sizeClass, ACampoId, type, colspanEncabezados, titulos)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Componentes_TablaOpcionMenu.js.html">Componentes/TablaOpcionMenu.js</a>, <a href="Componentes_TablaOpcionMenu.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Esta funcion lo que hace es crear una tabla que se pude insertar en el DOM
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>json</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define un objeto JSON</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que identifica el elemento en el DOM</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sizeClass</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que valida el tamaño de la tabla</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ACampoId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que valida el id de algun elemento</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que identifica el tipo de tabla que se va a crear</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>colspanEncabezados</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define la cantidad de columas por celda</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>titulos</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define si tendra o no titulo la tabla</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    DOMString
+</div>
+
+
+
+    
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="TablaUniformes"><span class="type-signature"></span>TablaUniformes<span class="signature">(AParameteros)</span><span class="type-signature"></span></h4>
 
     
@@ -1886,6 +2170,413 @@
 
 
         
+            
+
+    
+
+    <h4 class="name" id="Table"><span class="type-signature"></span>Table<span class="signature">(json, id, sizeClass, ACampoId, type, colspanEncabezados)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Componentes_Tabla.js.html">Componentes/Tabla.js</a>, <a href="Componentes_Tabla.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Esta funcion lo que realiza es una tabla dentro del DOM
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>json</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Conjunto de elementos json</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que valida que identificador es</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sizeClass</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define que tamaño sera la tabla</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ACampoId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que valida el campo id de cualquier otro elemento</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define el tipo de tabla que se va a insertar en el DOM</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>colspanEncabezados</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define la cantidad de columnas que usara una celda</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    DOMString
+</div>
+
+
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="Tarjeta"><span class="type-signature"></span>Tarjeta<span class="signature">(json)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Componentes_Tarjeta.js.html">Componentes/Tarjeta.js</a>, <a href="Componentes_Tarjeta.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Esta funcion crea una tarjeta con Bootstrap 5 para la creacion del modulo de MasVendidos
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>json</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parametro que define un objeto JSON</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    DOMString
+</div>
+
+
+
+    
+
+
+
+        
     
 
     
@@ -1982,7 +2673,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Wed Apr 28 2021 10:32:45 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Wed Apr 28 2021 10:59:44 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

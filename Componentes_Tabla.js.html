@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Componentes/Tabla.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Inicio</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-organizacion.html">Organizacion de Archivos</a></li><li><a href="tutorial-reglas.html">Reglas de Codificacion</a></li><li><a href="tutorial-tutorial.html">Desarrollo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ajax_post">ajax_post</a></li><li><a href="global.html#Button">Button</a></li><li><a href="global.html#CargarDatos">CargarDatos</a></li><li><a href="global.html#FormularioLogin">FormularioLogin</a></li><li><a href="global.html#GeneraElementoDOM">GeneraElementoDOM</a></li><li><a href="global.html#Input">Input</a></li><li><a href="global.html#LimpiarContenido">LimpiarContenido</a></li><li><a href="global.html#LimpiarElemento">LimpiarElemento</a></li><li><a href="global.html#MenuNavegacion">MenuNavegacion</a></li><li><a href="global.html#ObtieneElementoDom">ObtieneElementoDom</a></li><li><a href="global.html#ObtieneVariableSession">ObtieneVariableSession</a></li><li><a href="global.html#Select">Select</a></li><li><a href="global.html#TablaOpcionMenu">TablaOpcionMenu</a></li><li><a href="global.html#TablaUniformes">TablaUniformes</a></li><li><a href="global.html#Table">Table</a></li><li><a href="global.html#Tarjeta">Tarjeta</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Componentes/Tabla.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import {Button} from './Button.js';
+
+/**
+ * Esta funcion lo que realiza es una tabla dentro del DOM
+ * @param {string} json - Conjunto de elementos json
+ * @param {string} id - Parametro que valida que identificador es
+ * @param {string} sizeClass - Parametro que define que tamaño sera la tabla 
+ * @param {string} ACampoId - Parametro que valida el campo id de cualquier otro elemento
+ * @param {int} type - Parametro que define el tipo de tabla que se va a insertar en el DOM
+ * @param {int} colspanEncabezados - Parametro que define la cantidad de columnas que usara una celda
+ * @returns DOMString
+ */
+export function Table(json, id, sizeClass, ACampoId ,  type = 0, colspanEncabezados = 0){
+ const $card = document.createElement('div');
+ const $cardBody = document.createElement('div');
+ const $tableHolder = document.createElement('div');
+ const $table = document.createElement('table');
+ const $thead = document.createElement('thead');
+ const $theadRow = document.createElement('tr');
+ const $tbody = document.createElement('tbody');
+ const headers = (json.headers.split(',').filter(Boolean));
+ const contenido = json.content;
+
+ let tamanioTabla = 0;
+ if(contenido[0].length != 8){
+ if(json.titulos != undefined){
+  const $titulos = json.titulos.split(',');
+  const $titulosHeader = document.createElement('tr');
+
+  let t = 0;
+
+  $titulos.forEach( titulo => {
+   const $th = document.createElement('th');
+   if(t === 0){
+    $th.colSpan = "1";
+   }else{
+    $th.colSpan = colspanEncabezados;
+   }
+   $th.innerText = titulo;
+   $titulosHeader.appendChild($th);
+   t++;
+  });
+  
+  $thead.appendChild($titulosHeader);
+ }
+
+ $card.className = `card${id} card-table border-light shadow-sm mb-4`;
+ $cardBody.className = `card-body`;
+ $tableHolder.classList.add('table-responsive');
+ $table.className = `table tablaponderados`;
+ $table.classList.add(sizeClass);
+ $thead.classList.add('thead-light');
+ if(contenido.length === 0){
+  $card.innerHTML = "&lt;h3 class = 'no-data-message'>No hay datos&lt;/h3>";
+  return $card;
+ }
+  if(type === 0 || type === 1){
+   tamanioTabla = headers.length;
+  }else{
+   tamanioTabla = headers.length - 1;
+  }
+  for(let i = 0; i &lt;= tamanioTabla; i++){
+      const $th = document.createElement('th');
+      if(i === headers.length &amp;&amp; type &lt;= 1){
+          $th.innerText = 'Opciones';
+      }else{
+          $th.innerText = headers[i].trim();
+      }
+      $theadRow.appendChild($th);
+  }
+  $thead.appendChild($theadRow);
+  const $tbodyFragment = document.createDocumentFragment();
+  
+  contenido.forEach(registro => {
+   const $tr = document.createElement('tr');
+   for(let i = 0; i &lt;= tamanioTabla; i++){
+    const $td = document.createElement('td');
+    if(i === tamanioTabla &amp;&amp; type === 0){
+     $td.appendChild(Button('Editar','', 'btn-info', `data-edit-${id}`, registro[ACampoId]));
+     $td.appendChild(Button('Eliminar','', 'btn-danger', `data-eliminar-${id}`, registro[ACampoId]));
+    }else if(i === tamanioTabla &amp;&amp; type === 1){
+     $td.appendChild(Button('&lt;i class="fas fa-user">&lt;/i>','seleccionar', 'btn-primary', `selected-${id}`, registro[registro.length-1]));
+    }else{
+     $td.innerText = registro[Object.keys(registro)[i]];
+    }
+    $tr.appendChild($td);
+   }
+   $tbodyFragment.appendChild($tr);
+  });
+  
+  $tbody.appendChild($tbodyFragment);
+  $table.appendChild($thead);
+  $table.appendChild($tbody);
+  $tableHolder.appendChild($table);
+  $cardBody.appendChild($tableHolder);
+  $card.appendChild($cardBody);
+  
+ }
+  return $card;
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Wed Apr 28 2021 10:59:44 GMT-0500 (hora de verano central) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
