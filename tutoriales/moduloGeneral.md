@@ -2,17 +2,24 @@ Cuales son los pasos para crear un Modulo en general:
 
 Bienvenido, en este tutorial revisaremos los pasos generales para crear un modulo en general.
 
-Comencemos.
+Nuestro proyecto se va a manejar por modulos por lo tanto necesitamos saber como es que se van a crear cada uno de ellos.
 
 ###### Paso 1
-Al crear el boton en la pagina principal se debera crear un boton con un atributo modulo que referencie al modulo correcto o en cuestion (Uniformes)
+Para el paso 1 se necesita crear un boton que es el que nos va a ayudar a construir lo relacionado con ese modulo.
+
+Por lo tanto necesitamos crearlo con el componente [Boton](https://stribesart.github.io/Documentacion/global.html#Button), con este componente podemos llamarlo con el siguiente codigo 
+```javascript
+import { Button } from "./Componentes/Button.js";
+
+Button("Solicitar","Solicitar","btn-secondary","modulo-uniformes","SolicitarUniformes");
+```
+De esta manera ya pudimos crear un boton dentro de nuestro codigo, este componente puede llamarse en cualquier archivo, simplemente hay que verificar bien la ruta de donde lo vamos a llamar.
 
 ###### Paso 2
-En la carpeta publico se debe crear una carpeta con el mismo nombre con el que se llama al modulo anterior (Uniformes)
-Dentro de la carpeta se creara el documento principal de la pagina/modulo a cargar
+En la carpeta publico se debe crear una carpeta con el mismo nombre con el que se llama al modulo anterior. Dentro de la carpeta se creara el documento principal de la pagina/modulo a cargar
 
 ###### Paso 3
-Las funciones que se usaran se deberan llamar igual a los nombres de los archivos (FiltrosUniformes || FiltrosUniformes(){})
+Las funciones que se usaran se deberan llamar igual a los nombres de los archivos
 
 ###### Paso 4
 Creando Funcion de Filtros
