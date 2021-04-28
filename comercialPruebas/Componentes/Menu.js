@@ -1,3 +1,6 @@
+/**
+ * Funcion menu, cierra la sesion actual y limpia el contenido del session storage
+ */
 (()=>{
  const $nombreUsuario = document.getElementById("nombre-usuario");
  const $cerrarSesion = document.getElementById("cerrar-sesion");

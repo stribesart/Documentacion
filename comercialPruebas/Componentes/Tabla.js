@@ -1,5 +1,15 @@
 import {Button} from './Button.js';
 
+/**
+ * Esta funcion lo que realiza es una tabla dentro del DOM
+ * @param {string} json - Conjunto de elementos json
+ * @param {string} id - Parametro que valida que identificador es
+ * @param {string} sizeClass - Parametro que define que tamaño sera la tabla 
+ * @param {string} ACampoId - Parametro que valida el campo id de cualquier otro elemento
+ * @param {int} type - Parametro que define el tipo de tabla que se va a insertar en el DOM
+ * @param {int} colspanEncabezados - Parametro que define la cantidad de columnas que usara una celda
+ * @returns DOMString
+ */
 export function Table(json, id, sizeClass, ACampoId ,  type = 0, colspanEncabezados = 0){
  const $card = document.createElement('div');
  const $cardBody = document.createElement('div');

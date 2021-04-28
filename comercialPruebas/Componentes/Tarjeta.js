@@ -1,5 +1,10 @@
 import { GeneraElementoDom } from "../publico/js/GeneraElementoDom.js";
 
+/**
+ * Esta funcion crea una tarjeta con Bootstrap 5 para la creacion del modulo de MasVendidos
+ * @param {string} json - Parametro que define un objeto JSON
+ * @returns DOMString
+ */
 export function Tarjeta(json) {
     const contenido = GeneraElementoDom("div");
     contenido.classList.add("card");

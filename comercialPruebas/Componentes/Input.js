@@ -9,7 +9,7 @@
  * @param {int} AChecked - Parametro que define si se le va a insertar un checkbox
  * @returns DOMString
  * @example
- * Input(nombreLabel1, "radio", `radio-${nombreLabel1}`, "tipoVenta", "0", 1);
+ * Input("Input", "radio", `radio-${nombreLabel1}`, "tipoVenta", "0", 1);
  */
 export function Input(ANombreLabel,AType,  AId, AName, AValue = '', ADisabled = 1, AChecked = 1){
     const $container = document.createElement('div')

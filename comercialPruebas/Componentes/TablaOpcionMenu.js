@@ -2,6 +2,17 @@ import { Button } from './Button.js';
 import { GeneraElementoDom } from "../publico/js/GeneraElementoDom.js"
 import { ObtieneElementoDom } from '../publico/js/obtieneElementoDom.js';
 
+/**
+ * Esta funcion lo que hace es crear una tabla que se pude insertar en el DOM
+ * @param {string} json - Parametro que define un objeto JSON
+ * @param {string} id - Parametro que identifica el elemento en el DOM
+ * @param {string} sizeClass - Parametro que valida el tamaño de la tabla
+ * @param {string} ACampoId - Parametro que valida el id de algun elemento
+ * @param {int} type - Parametro que identifica el tipo de tabla que se va a crear
+ * @param {int} colspanEncabezados - Parametro que define la cantidad de columas por celda
+ * @param {int} titulos - Parametro que define si tendra o no titulo la tabla
+ * @returns DOMString
+ */
 export function TablaOpcionMenu(json, id, sizeClass, ACampoId, type = 0, colspanEncabezados = 0, titulos = 0) {
     const $card = document.createElement('div');
     const $cardBody = document.createElement('div');
