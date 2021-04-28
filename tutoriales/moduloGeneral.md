@@ -12,7 +12,7 @@ Por lo tanto es necesario crearlo en nuestra estructura HTML con el siguiente co
 <button type="button" class="btn btn-primary" data-modulo="Modulo">Modulo</button>
 ```
 
-De esta manera ya pudimos crear un boton dentro de nuestro codigo, este componente puede llamarse en cualquier archivo, simplemente hay que verificar bien la ruta de donde lo vamos a llamar.
+De esta manera ya pudimos crear un boton dentro de nuestro codigo, este componente puede llamarse en cualquier archivo a este punto no sera necesario llamar la ruta ya que tenemos una funcion que llama al modulo que fue seleccionado.
 
 ###### Paso 2
 En la carpeta **publico** se debe crear una carpeta con el mismo nombre con el que se llama al modulo anterior. Dentro de la carpeta se creara el documento principal de la pagina/modulo a cargar.
