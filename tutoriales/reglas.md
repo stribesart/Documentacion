@@ -69,3 +69,12 @@ Para las variables o constantes que no tienen que ver con los elementos DOM util
 Ejemplo:
 
 ![Imagen de como se deben nombrar las constantes o variables](https://github.com/stribesart/Documentacion/blob/main/imagenes/ReglasCodificacion/vcNoDOM.png?raw=true)
+
+##### Clases
+
+Todas las clases se van a llamar como la funcion principal y se van a separar los niveles por un guion medio.
+
+guion medio significa que es un elemento que depende de
+guion bajo  significa que es una accion de algo
+
+Ejemplo:
