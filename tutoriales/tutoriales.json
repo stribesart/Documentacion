@@ -24,5 +24,8 @@
   },
   "organizacion":{
     "title": "Organizacion de Archivos"
+  },
+  "estilos": {
+    "title": "Estilos"
   }
 }
