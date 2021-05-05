@@ -78,3 +78,8 @@ guion medio significa que es un elemento que depende de
 guion bajo  significa que es una accion de algo
 
 Ejemplo:
+
+
+##### Destructuracion
+
+Para las funciones solo se va a enviar un solo parametro llamado json y posteriormente se hra la destructuracion
