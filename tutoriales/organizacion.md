@@ -78,6 +78,16 @@ De esta manera quedaria ordenado nuestro proyecto, cabe recalcar que es importan
 index.js se cambia a publico/js/index.js
 ahora si todos los js van a estar en la carpeta de js
 
+
+cambios
+cambios
+cambios
+cambios
+cambios
+cambios
+cambios
+v
+
 Creamos nuestro archivo html con su estructura basica
 Insertamos el link de la hoja de estilos en la cabecera
 Insertamos el script en el body que referencia a nuesto index.js
