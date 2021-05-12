@@ -2,7 +2,66 @@ Para la organizacion de nuestro proyecto se debe cumplir lo siguiente.
 
 La carpeta principal se debe llamar igual que el proyecto esto con el fin de que nuestro proyecto sea fácil de identificar.
 
-Dentro de la carpeta principal se encontra una sola carpeta llamada **publico** al igual que el archivo principal que va a contener toda nuestra estructura **HTML** el cual sera llamado **index.html**. Creamos nuestro archivo html con su estructura basica, debemos insertar el link de la hoja de estilos en la cabecera, debemos insertar el script en el body que referencia a nuesto index.js. Debemos insertar en la cabecera el link a bootstrap que se encuentra en (referencia a bootstrap). Debemos insertar en el body del html el script a bootstrap que se encuentra en (referencia a bootstrap).
+Dentro de la carpeta principal se encontra una sola carpeta llamada **publico** al igual que el archivo principal que va a contener toda nuestra estructura **HTML** el cual sera llamado **index.html**. 
+
+Para la creacion de dicho documento lo que podemos hacer es crear la estructura basica, como utilizaremos Visual Studio Code solo podemos poner el simbolo **!** y presionamos la tecla **tab** o **tabulador** y tendremos una estructura como la siguiente:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+```
+
+Posteriormente hay que identificar bien la **cabecera** y el **cuerpo** los cuales se llaman **head** y **body** respectivamente. Dentro de la cabecera debemos insertar el [link]() del cdn de bootstrap (framework que utilizamos para estilos), debemos insertar el [link]() del FontAwesomey posteriormente nuestros estilos propios que se encontraran en la carpeta CSS [ver estilos](https://stribesart.github.io/Documentacion/tutorial-estilos.html). Ahora en nuestro body debemos insertar un div "principal", este div servira para construir dentro de el nuestra pagina, ademas debemos insertar el [script]() de Bootstrap, el [script]() del Alertify, el [script]() de Axios y tendremos una seccion para nuestros scripts personalizados. Nuestro **index.html** quedaria de la siguiente manera:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="publico/css/estilos.css">
+
+    <title>Nombre del Proyecto</title>
+
+</head>
+<body>
+
+    <div class="principal" id="principal"></div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Alertify -->
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <!-- Scripts Personalizados -->
+    <script type="module" src="publico/js/script.js"></script>
+
+</body>
+</html>
+```
 
 Dentro de nuestra carpeta **publico** se encontraran las carpetas relacionadas con la aplicacion, estas serian las carpetas *js, css, img/imagenes, etc*.
 
